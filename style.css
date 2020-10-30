@@ -1,0 +1,94 @@
+*{
+	box-sizing: border-box;
+}
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: "Quicksand";
+	color: #e0e8ed;
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent
+}
+div{font-size: 20px}
+a{color: white;text-decoration: none}
+a:hover{text-decoration: underline}
+button{
+	border-style: none;
+	outline: none;
+	cursor: pointer
+}
+::-webkit-scrollbar{width: 10px}
+::-webkit-scrollbar-track{background-color: #1e2428}
+::-webkit-scrollbar-thumb{background-color: #292f33}
+.row::after {
+	content: "";
+	display: block;
+	clear: both
+}
+header{text-align: left}
+.bamboo,.bsbe,.yusha{
+	float: left;
+	margin: 0 0 10px 0;
+	width: 100%;
+	height: 120px;
+	padding: 75px 10px 10px 100px;
+	background-size: contain;
+	image-rendering: pixelated;
+	background-repeat: no-repeat;
+	box-shadow: 0 0 10px #1e2428, 0 0 12px #1e2428
+}
+.bamboo{background-image: url(picture/bamboo_sapling.png)}
+.bsbe{background-image: url(picture/bsbe.jpg)}
+.yusha{background-image: url()}
+.content{padding: 0 20px 0 20px}
+.content2{padding: 0 30px 0 30px}
+.bcolor1{background-color: #292f33}
+.bcolor2{background-color: #1e2428}
+.bcolor3{background-color: #0e1518}
+.box,.box2,.box3{
+	float: left;
+	padding: 15px;
+	border-radius: 3px;
+	line-height: 30px;
+	text-shadow: 0 0 3px black
+}
+.box{width: 50%}
+.box div{padding: 10px}
+.box2{
+	width: 50%;
+	height: 500px;
+	overflow: auto
+}
+.box3{width: 100%}
+.bd{
+	text-align: center;
+	border: solid 2px #1e2428;
+	margin: 5px;
+	padding: 15px
+}
+.tw{padding: 0;text-align: center}
+footer {
+	background-color: #1e2428;
+	padding: 40px;
+	font-size: 15px;
+	text-align: center;
+	box-shadow: 0 0 10px #1e2428, 0 0 12px #1e2428
+}
+img {
+	max-width: 100%;
+	height: auto;
+	box-shadow: 0 0 10px #1e2428
+}
+@media (max-width: 720px){
+	.box2{width: 100%}
+	.box2{height: auto;overflow:hidden}
+  	.box{width: 100%}
+  	.content{padding: 0}
+	.content2{padding: 5px}
+}
+@media (max-width: 512px){
+  	.box{padding: 0 0 10px 0}
+	.content2{padding: 0}
+	div{font-size: 18px}
+}

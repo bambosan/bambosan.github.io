@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>bsbe</title>
+        <meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body class="bcolor3">
+        <header>
+            <h2 class="bsbe bcolor2"> &nbsp;bicubic shader be ed</h2>
+        </header>
+        <div class="row content2">
+            <div class="box3 bcolor1">
+                <h3>latest update: version 1.1</h3>
+                <h3>screenshot</h3>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="picture/ss1.jpg" target="_blank" noopener><img src="picture/ss1.jpg"></img></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="picture/ss2.jpg" target="_blank" noopener><img src="picture/ss2.jpg"></img></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="picture/ss3.jpg" target="_blank" noopener><img src="picture/ss3.jpg"></img></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="picture/ss4.jpg" target="_blank" noopener><img src="picture/ss4.jpg"></img></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="picture/ss5.jpg" target="_blank" noopener><img src="picture/ss5.jpg"></img></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="picture/ss6.jpg" target="_blank" noopener><img src="picture/ss6.jpg"></img></a>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <div class="box2 bcolor2">
+                <h3>Changelog</h3>
+                <p>new version 1.1<br>in this version i did some bug fixes and performance improvements and little changed the graphics.</p>
+                <ul>
+                    <li>New sun & moon path rotation</li>
+                    <li>Improved 2D water wave surface</li>
+                    <li>New water waving</li>
+                    <li>Improved fresnel/rim reflect on water</li>
+                    <li>New semi-transparent cloud</li>
+                    <li>Improved sun reflection on water</li>
+                </ul>
+            </div>
+            <div class="box2 bcolor2">
+                <h3>Note</h3>
+                <ul>
+                    <li>this shader can only run on OpenGLES 3.0 and above. &nbsp;What is it ?, <a href="https://www.notebookcheck.net/Smartphone-Graphics-Cards-Benchmark-List.149363.0.html" target="_blank" noopener>click on this</a></li>
+                    <li>this shader is work on mcbe android ios and window 10</li>
+                    <li>do not re-upload shader file</li>
+                    <li>do not retrieve and use code without significant changes</li>
+                </ul>
+            </div>
+            <div class="box3 bcolor1">
+                <h3>Download</h3>
+                <a href="#" target="_blank" noopener><div class="bd">BSBE Enhanced Default</div></a>
+            </div>
+        </div>
+        <footer>
+            <p>&copy;2020&nbsp;&nbsp;<i class="fa fa-user" aria-hidden="true"></i><a href="https://twitter.com/bicubic7?s=09" target="_blank" rel="noopener"> Sad</a>&nbsp;&nbsp;<i class="fa fa-github" aria-hidden="true"></i><a href="https://github.com/bicubic-shader" target="_blank" rel="noopener"> sad</a>
+            </p>
+        </footer>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script type="text/javascript">
+            var swiper = new Swiper('.swiper-container', {
+                loop: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                centeredSlides: true,
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 40
+                    }
+                },
+                autoplay: {
+                    delay: 2600,
+                    disableOnInteraction: false
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+            });
+        </script>
+    </body>
+</html>
