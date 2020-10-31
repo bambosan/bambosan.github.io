@@ -75,11 +75,7 @@ footer {
 	text-align: center;
 	box-shadow: 0 0 10px #1e2428, 0 0 12px #1e2428
 }
-img {
-	max-width: 100%;
-	height: auto;
-	box-shadow: 0 0 10px #1e2428
-}
+img{max-width: 100%;height: auto}
 @media (max-width: 720px){
 	.box2{width: 100%}
 	.box2{height: auto;overflow:hidden}
