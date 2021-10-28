@@ -1,123 +1,92 @@
-*{ box-sizing: border-box; }
-
-/*****************************************/
+*{margin: 0;padding: 0;}
+html{scroll-behavior: smooth;}
 body{
-	margin: 0;
-	padding: 0;
-	font-family: "Poiret One";
-	color: rgb(200,200,200);
-	user-select: none;
-	-webkit-user-select: none;
-	-webkit-tap-highlight-color: transparent
+	font-family: sans-serif;
+	box-sizing: border-box;
+	color:gray;
 }
-div{ font-size: 30px }
-p{ font-size: 25px }
-a{
-	color: rgb(180,180,180);
-	text-align: left;
-	text-decoration: none
-}
-a:hover{
-	color: white;
-	text-shadow: 0 0 5px
-}
-button{
-	border-style: none;
-	outline: none;
-	cursor: pointer
-}
-header{
+section{
+	position: relative;
 	width: 100%;
-	height: 250px;
-	padding: 160px 0 0 40px;
-	font-size: 40px;
-	text-align: left;
+	height: 100vh;
+	background: black;
 }
-footer{
-	padding: 60px 0 50px 0;
-	font-size: 15px;
+section .name{
+	position: absolute;
+	font-size: 1.5em;
+	width: 115px;
+	right: 0;
+	padding: 20px;
+}
+section .categ{
+	position: absolute;
+	line-height: 30px;
+	font-size: 1em;
+	width: 100px;
+	left: 0;
+	padding: 20px;
+}
+section header{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	top: 45vh;
 	text-align: center;
-	background-color: black
+	font-size: 3em;
 }
-i{ color: rgb(130,130,130) }
-img{ width: 100%; height: auto}
-/******************************************/
-::-webkit-scrollbar{
-	width: 10px;
-	background-image: url(picture/dirt.jpg);
-	background-repeat: repeat;
-	background-size: auto;
-	image-rendering: pixelated;
+.container{
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 100vh;
+	background: black;
+	flex-wrap: wrap;
+	overflow: hidden;
 }
-::-webkit-scrollbar-track{background-color: rgba(0,0,0,0.85)}
-::-webkit-scrollbar-thumb{background-color: rgb(30,30,30)}
-.row::after {
-	content: "";
-	display: block;
-	clear: both
+.content{
+	position: relative;
+	height: auto;
+	width: 600px;
+	margin-top: 40px;
+margin-bottom: 40px;
+	padding: 0;
 }
-.bgctext{
-	padding: 40px;
-	background: rgba(0,0,0,0.8);
+.content h1{
+	font-size: 3em;
+	text-align: left;
+	padding-top: 10px;
+	padding-left: 10px;
 }
-.bgctext1{
-	line-height: 40px;
-	padding: 10px 40px 10px 40px;
-	background: rgba(0,0,0,0.85);
+.content p{
+	text-align: justify;
+	line-height: 30px;
+	padding: 10px;
 }
-.bimg{
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: auto;
+.content img{
+margin-top: 0;
+margin-bottom: 0;
+margin-left: 10px;
+margin-right: 10px;
 }
-.bimg1{
-	background-repeat: repeat;
-	background-size: auto;
-	background-attachment: fixed;
-	image-rendering: pixelated;
-}
-.descp{
-	font-family: "Quicksand";
-	font-size: 20px;
-	color: rgb(140,140,140)
-}
-.vertag{
-	font-family: "Quicksand";
-	font-size: 15px
-}
-.box,.box2,.box3{ float: left; }
-.box{ width: 50% }
-.box2{
-	width: 50%;
-	height: 500px;
-	overflow: auto
-}
-.box3{ width: 100% }
-.tw{ padding: 10px; text-align: center }
 
-/*****************************************/
-@media (max-width: 720px){
-	.box2{
-		width: 100%;
-		height: auto;
-		overflow: hidden
-	}
-	.box{
-		width: 100%;
-		border: none;
-	}
-}
-@media (max-width: 512px){
-	div{ font-size: 25px }
-	p{ font-size: 20px }
-	header{
-		font-size: 30px;
-		padding: 170px 0 0 20px
-	}
-	footer{ font-size: 13px }
-	.bgctext{ padding: 20px }
-	.bgctext1{
-		line-height: 30px;
-		padding: 0 30px 0 20px
-	}
-}
+.aos{opacity: 0; transition: 0.5s; transition-property: opacity transform;}
+.aos.active{opacity: 1}
+
+.mod1{transform: translateX(-200px)}
+.mod2{transform: translateX(200px)}
+.mod3{transform: scale(0)}
+.mod4{transform: scale(0)}
+.mod5{transform: rotateX(90deg)}
+.mod6{transform: rotateY(90deg)}
+.mod7{transform: translate3d(200px, 200px, 0)}
+.mod8{transform: translate3d(-200px, 200px, 0)}
+
+.mod1.active{transform: translateX(0);}
+.mod2.active{transform: translateX(0);}
+.mod3.active{transform: scale(1);}
+.mod4.active{transform: scale(1);}
+.mod5.active{transform: rotateX(0deg);}
+.mod6.active{transform: rotateY(0deg);}
+.mod7.active{transform: translate3d(0, 0, 0);}
+.mod8.active{transform: translate3d(0, 0, 0);}
