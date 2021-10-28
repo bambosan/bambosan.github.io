@@ -35,21 +35,18 @@ section header{
 	font-size: 3em;
 }
 .container{
-	position: relative;
 	display: flex;
-	justify-content: space-around;
-	align-items: center;
+	flex-flow: row wrap;
+	justify-content: center;
 	min-height: 100vh;
 	background: black;
-	flex-wrap: wrap;
 	overflow: hidden;
 }
 .content{
 	position: relative;
 	height: auto;
-	width: 600px;
-	margin-top: 40px;
-margin-bottom: 40px;
+	width: 580px;
+	margin-top: 20px 0 20px 0;
 	padding: 0;
 }
 .content h1{
