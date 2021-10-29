@@ -1,89 +1,94 @@
-*{margin: 0;padding: 0;}
+*{margin: 0; padding: 0;}
 html{scroll-behavior: smooth;}
 body{
 	font-family: sans-serif;
-	box-sizing: border-box;
-	color:gray;
-}
-section{
-	position: relative;
-	width: 100%;
-	height: 100vh;
+	color: gray;
 	background: black;
+	-webkit-tap-highlight-color:transparent
 }
-section .name{
-	position: absolute;
-	font-size: 1.5em;
-	width: 115px;
-	right: 0;
-	padding: 20px;
+header{
+	margin: 10vh 0 0 10px;
+	text-align: left;
+	font-size: 2em;
 }
-section .categ{
-	position: absolute;
-	line-height: 30px;
-	font-size: 1em;
-	width: 100px;
-	left: 0;
-	padding: 20px;
+.name{
+	float:left;
+	display: block;
+	font-size: 20px;
+	padding: 20px 0 0 10px
 }
-section header{
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	top: 45vh;
-	text-align: center;
-	font-size: 3em;
+.navb{
+	width: auto;
+	overflow: hidden;
+	padding-top: 10px
 }
-.container{
+.navb a{
+  float: right;
+  display: block;
+  color: gray;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.navb a:hover{color: white}
+.navb a.active{color: white}
+.navb .icon{display: none}
+.con{
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	min-height: 100vh;
-	background: black;
 	overflow: hidden;
+	min-height: 100vh;
+	background: black
 }
-.content{
-	position: relative;
-	height: 50vh;
-	width: 580px;
-	margin-top: 20px 0 20px 0;
-	padding: 0;
+.con hr{
+	width: 100%;
+	height: 1px;
+	background: gray;
+	border: none;
+	margin: 20px 10px 20px 10px
 }
-.content h1{
-	font-size: 3em;
+.col{
+	height: auto;
+	width: auto;
+	margin: 10px;
+	padding: 0
+}
+.col a{
+	display: block;
+	font-size: 2em;
 	text-align: left;
-	padding-top: 10px;
-	padding-left: 10px;
+	text-decoration: none;
+	color: gray
 }
-.content p{
-	text-align: justify;
-	line-height: 30px;
-	padding: 10px;
+.col a:hover{color:white}
+.col p{line-height: 30px;padding: 2px}
+.col img{width: 100%; height: 100%}
+
+@media (max-width: 720px){
+	.navb a{display: none;}
+  .navb a.icon{float: right;display: block}
+  .navb.navbm a {
+    float: none;
+    display: block;
+    text-align: right;
+  }
 }
-.content img{
-margin-top: 0;
-margin-bottom: 0;
-margin-left: 10px;
-margin-right: 10px;
+@media (min-width: 720px){
+	header{margin: 30vh 0 0 40px}
+	.name{padding: 20px 0 30px 40px}
+	.navb{padding: 10px 30px 0 0}
+	.con hr{margin: 30px 40px 30px 40px}
+	.col{margin: 10px 40px 10px 40px}
 }
-
-.aos{opacity: 0; transition: 0.5s; transition-property: opacity transform;}
-.aos.active{opacity: 1}
-
-.mod1{transform: translateX(-200px)}
-.mod2{transform: translateX(200px)}
-.mod3{transform: scale(0)}
-.mod4{transform: scale(0)}
-.mod5{transform: rotateX(90deg)}
-.mod6{transform: rotateY(90deg)}
-.mod7{transform: translate3d(200px, 200px, 0)}
-.mod8{transform: translate3d(-200px, 200px, 0)}
-
-.mod1.active{transform: translateX(0);}
-.mod2.active{transform: translateX(0);}
-.mod3.active{transform: scale(1);}
-.mod4.active{transform: scale(1);}
-.mod5.active{transform: rotateX(0deg);}
-.mod6.active{transform: rotateY(0deg);}
-.mod7.active{transform: translate3d(0, 0, 0);}
-.mod8.active{transform: translate3d(0, 0, 0);}
+@media (min-width: 1036px){
+	.con{align-items: center}
+	.col{margin: 0}
+	.col img{
+		margin-left: 40px;
+		width: 33vw;
+		height: auto;
+	}
+	.col a{margin-left: 10px}
+	.col p{margin: 0 40px 0 10px; width: 57vw}
+}
