@@ -70,7 +70,11 @@ footer{
 	line-height: 30px;
 	padding: 2px
 }
-.col img{width: 100%; height: 100%}
+.col img{
+	width: 100%;
+	height: 100%;
+	border-radius: 5px
+}
 
 @media (max-width: 720px){
 	.navb a{display: none}
