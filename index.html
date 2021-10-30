@@ -55,7 +55,7 @@
 		</div>
 		<header>Something</header>
 		<div class="con"><hr>
-			<div class="col">
+			<div class="col" style="box-shadow: 5px 5px 5px black">
 				<a class="twitter-timeline" data-width="800" data-height="550" data-theme="dark" href="https://twitter.com/bambo_san?ref_src=twsrc%5Etfw"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div><hr>
 		</div>
@@ -64,7 +64,7 @@
 			document.querySelector(".icon").addEventListener("click",() => {
 				document.querySelector(".navb").classList.toggle("navbm")
 			});
-			async function load(url,sel){
+			const load = async (url, sel) => {
 				let obj = await (await fetch(url)).json();
 				if(obj == 0){ return "not released"; } else {
 					switch(sel){
@@ -76,7 +76,7 @@
 					}
 				}
 			}
-			load('https://api.github.com/repos/bambosan/bsbe-renewed/releases',1).then(val => { bsbere_lu.innerHTML = val});
+	load('https://api.github.com/repos/bambosan/bsbe-renewed/releases',1).then(val => { bsbere_lu.innerHTML = val});
 			load('https://api.github.com/repos/bambosan/bsbe-renewed/releases',2).then(val => { bsbere_sf.innerHTML = val});
 			load('https://api.github.com/repos/bambosan/bsbe-renewed/releases',3).then(val => { bsbere_td.innerHTML = val});
 			load('https://api.github.com/repos/bambosan/Nori-Shaders-BE/releases',1).then(val => { nori_lu.innerHTML = val});

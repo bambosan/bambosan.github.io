@@ -1,15 +1,16 @@
 *{margin: 0; padding: 0}
-a{color: gray}
+a{color: silver}
 body{
 	font-family: 'Quicksand';
-	color: gray;
-	background: black;
+	color: silver;
+	background: #292F33;
+text-shadow: 3px 3px 5px black;
 	-webkit-tap-highlight-color:transparent
 }
 header{
-	margin: 20vh 0 0 10px;
+	margin: 10vh 0 0 10px;
 	text-align: left;
-	font-size: 2em;
+	font-size: 3em;
 }
 footer{
 	margin: 80px;
@@ -59,7 +60,7 @@ footer{
 .col .hpack{
 	display: block;
 	font-size: 2em;
-	line-height: 25px;
+	line-height: 30px;
 	text-align: left;
 	text-decoration: none
 }
@@ -67,13 +68,14 @@ footer{
 .col .infpack{font-size: 0.7em}
 .col p{
 	font-size: 1em;
-	line-height: 30px;
+	line-height: 25px;
 	padding: 2px
 }
 .col img{
 	width: 100%;
 	height: 100%;
-	border-radius: 5px
+	border-radius: 5px;
+box-shadow: 5px 5px 5px black
 }
 
 @media (max-width: 720px){
