@@ -1,7 +1,7 @@
-*{margin: 0; padding: 0;}
-html{scroll-behavior: smooth;}
+*{margin: 0; padding: 0}
+a{color: gray}
 body{
-	font-family: sans-serif;
+	font-family: 'Lato';
 	color: gray;
 	background: black;
 	-webkit-tap-highlight-color:transparent
@@ -12,8 +12,7 @@ header{
 	font-size: 2em;
 }
 footer{
-	margin-top: 10vh;
-	padding: 50px;
+	margin: 80px;
 	text-align: center;
 	font-size: 1em;
 }
@@ -31,10 +30,8 @@ footer{
 .navb a{
   float: right;
   display: block;
-  color: gray;
   padding: 10px;
-  text-decoration: none;
-  font-size: 20px;
+  font-size: 20px
 }
 .navb a:hover{color: white}
 .navb a.active{color: white}
@@ -43,10 +40,9 @@ footer{
 	position: relative;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
+	justify-content: center;
 	overflow: hidden;
-	min-height: 100vh;
-	background: black
+	min-height: 100vh
 }
 .con hr{
 	width: 100%;
@@ -61,22 +57,25 @@ footer{
 	margin: 10px;
 	padding: 0
 }
-.col a{
+.col .hpack{
 	display: block;
 	font-size: 2em;
-	line-height: 20px;
+	line-height: 25px;
 	text-align: left;
-	text-decoration: none;
-	color: gray
+	text-decoration: none
 }
-
-.col a:hover{color:white}
-.col p{line-height: 30px; padding: 2px}
+.col .hpack:hover{color: white}
+.col .infpack{font-size: 0.7em}
+.col p{
+	font-size: 1em;
+	line-height: 30px;
+	padding: 2px
+}
 .col img{width: 100%; height: 100%}
 
 @media (max-width: 720px){
-	.navb a{display: none;}
-  .navb a.icon{float: right;display: block}
+	.navb a{display: none}
+  .navb a.icon{float: right; display: block}
   .navb.navbm a {
     float: none;
     display: block;
@@ -89,6 +88,7 @@ footer{
 	.navb{padding: 10px 30px 0 0}
 	.con hr{margin: 30px 40px 30px 40px}
 	.col{margin: 10px 40px 10px 40px}
+	.col .infpack{font-size: 0.8em}
 }
 @media (min-width: 1036px){
 	.con{align-items: center}
@@ -98,6 +98,6 @@ footer{
 		width: 33vw;
 		height: auto
 	}
-	.col a{margin-left: 10px}
-	.col p{margin: 0 40px 0 10px; width: 57vw}
+	.col .hpack{margin-left: 20px}
+	.col p{margin: 0 40px 0 20px; width: 57vw}
 }
