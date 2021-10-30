@@ -19,7 +19,7 @@ footer{
 .name{
 	float:left;
 	display: block;
-	font-size: 20px;
+	font-size: 2em;
 	padding: 20px 0 0 10px
 }
 .navb{
@@ -31,7 +31,7 @@ footer{
 	float: right;
 	display: block;
 	padding: 10px;
-	font-size: 20px
+	font-size: 2em
 }
 .navb a:hover{color: white}
 .navb a.active{color: white}
