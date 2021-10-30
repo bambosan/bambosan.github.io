@@ -1,8 +1,8 @@
 *{margin: 0; padding: 0}
-a{color: silver}
+a{color: white}
+a:hover{color: #4682B4}
 body{
 	font-family: 'Quicksand';
-	color: silver;
 	background: #292F33;
 text-shadow: 3px 3px 5px black;
 	-webkit-tap-highlight-color:transparent
@@ -11,17 +11,28 @@ header{
 	margin: 10vh 0 0 10px;
 	text-align: left;
 	font-size: 3em;
+color: white
+}
+hr{
+	width: 95%;
+	height: 1.1px;
+	background: #667580;
+	border: none;
+	margin: 20px 10px 20px 10px;
+
 }
 footer{
 	margin: 80px;
 	text-align: center;
 	font-size: 1em;
+color: white
 }
 .name{
 	float:left;
 	display: block;
 	font-size: 1.5em;
-	padding: 25px 0 0 10px
+	padding: 25px 0 0 10px;
+color: white
 }
 .navb{
 	width: auto;
@@ -32,10 +43,9 @@ footer{
 	float: right;
 	display: block;
 	padding: 10px;
-	font-size: 2em
+	font-size: 2em;
 }
-.navb a:hover{color: white}
-.navb a.active{color: white}
+.navb a.active{text-shadow: 0 0 5px}
 .navb .icon{display: none}
 .con{
 	position: relative;
@@ -43,13 +53,6 @@ footer{
 	flex-flow: row wrap;
 	justify-content: center;
 	overflow: hidden
-}
-.con hr{
-	width: 100%;
-	height: 1px;
-	background: gray;
-	border: none;
-	margin: 20px 10px 20px 10px
 }
 .col{
 	height: auto;
@@ -64,12 +67,12 @@ footer{
 	text-align: left;
 	text-decoration: none
 }
-.col .hpack:hover{color: white}
-.col .infpack{font-size: 0.7em}
+.col .infpack{font-size: 0.7em; color: #667580}
 .col p{
 	font-size: 1em;
 	line-height: 25px;
-	padding: 2px
+	padding: 2px;
+color:white
 }
 .col img{
 	width: 100%;
@@ -89,9 +92,9 @@ box-shadow: 3px 3px 5px black
 }
 @media (min-width: 720px){
 	header{margin: 30vh 0 0 40px}
+hr{margin: 30px 0 30px 0}
 	.name{padding: 20px 0 30px 40px}
 	.navb{padding: 10px 30px 0 0}
-	.con hr{margin: 30px 40px 30px 40px}
 	.col{margin: 10px 40px 10px 40px}
 	.col .infpack{font-size: 0.8em}
 }
