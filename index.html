@@ -66,6 +66,7 @@
 			});
 			async function load(url, sel){
 				const obj = await (await fetch(url)).json();
+				console.log(obj[0]);
 				if(obj == 0){ return "not released"; } else {
 					switch(sel){
 						case 1: let uval = obj[0].assets[0].updated_at;
@@ -76,18 +77,22 @@
 					}
 				}
 			}
-			load('https://api.github.com/repos/bambosan/bsbe-renewed/releases',1).then(val => { bsbere_lu.innerHTML = val});
-			load('https://api.github.com/repos/bambosan/bsbe-renewed/releases',2).then(val => { bsbere_sf.innerHTML = val});
-			load('https://api.github.com/repos/bambosan/bsbe-renewed/releases',3).then(val => { bsbere_td.innerHTML = val});
-			load('https://api.github.com/repos/bambosan/Nori-Shaders-BE/releases',1).then(val => { nori_lu.innerHTML = val});
-			load('https://api.github.com/repos/bambosan/Nori-Shaders-BE/releases',2).then(val => { nori_sf.innerHTML = val});
-			load('https://api.github.com/repos/bambosan/Nori-Shaders-BE/releases',3).then(val => { nori_td.innerHTML = val});
-			load('https://api.github.com/repos/bambosan/Mirai-Shaders-BE/releases',1).then(val => { mirai_lu.innerHTML = val});
-			load('https://api.github.com/repos/bambosan/Mirai-Shaders-BE/releases',2).then(val => { mirai_sf.innerHTML = val});
-			load('https://api.github.com/repos/bambosan/Mirai-Shaders-BE/releases',3).then(val => { mirai_td.innerHTML = val});
-			load('https://api.github.com/repos/bambosan/bicubic-shaders-be/releases',1).then(val => { bsbe_lu.innerHTML = val});
-			load('https://api.github.com/repos/bambosan/bicubic-shaders-be/releases',2).then(val => { bsbe_sf.innerHTML = val});
-			load('https://api.github.com/repos/bambosan/bicubic-shaders-be/releases',3).then(val => { bsbe_td.innerHTML = val});
+			const bsbere = 'https://api.github.com/repos/bambosan/bsbe-renewed/releases';
+			load(bsbere,1).then(val => { bsbere_lu.innerHTML = val});
+			load(bsbere,2).then(val => { bsbere_sf.innerHTML = val});
+			load(bsbere,3).then(val => { bsbere_td.innerHTML = val});
+			const nori = 'https://api.github.com/repos/bambosan/Nori-Shaders-BE/releases';
+			load(nori,1).then(val => { nori_lu.innerHTML = val});
+			load(nori,2).then(val => { nori_sf.innerHTML = val});
+			load(nori,3).then(val => { nori_td.innerHTML = val});
+			const mirai = 'https://api.github.com/repos/bambosan/Mirai-Shaders-BE/releases';
+			load(mirai,1).then(val => { mirai_lu.innerHTML = val});
+			load(mirai,2).then(val => { mirai_sf.innerHTML = val});
+			load(mirai,3).then(val => { mirai_td.innerHTML = val});
+			const bsbe = 'https://api.github.com/repos/bambosan/bicubic-shaders-be/releases';
+			load(bsbe,1).then(val => { bsbe_lu.innerHTML = val});
+			load(bsbe,2).then(val => { bsbe_sf.innerHTML = val});
+			load(bsbe,3).then(val => { bsbe_td.innerHTML = val});
 		</script>
 	</body>
 </html>
