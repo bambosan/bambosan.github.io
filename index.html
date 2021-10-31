@@ -64,8 +64,8 @@
 			document.querySelector(".icon").addEventListener("click",() => {
 				document.querySelector(".navb").classList.toggle("navbm")
 			});
-			const load = async (url, sel) => {
-				let obj = await (await fetch(url)).json();
+			async function load(url, sel){
+				const obj = await (await fetch(url)).json();
 				if(obj == 0){ return "not released"; } else {
 					switch(sel){
 						case 1: let uval = obj[0].assets[0].updated_at;
@@ -76,7 +76,7 @@
 					}
 				}
 			}
-	load('https://api.github.com/repos/bambosan/bsbe-renewed/releases',1).then(val => { bsbere_lu.innerHTML = val});
+			load('https://api.github.com/repos/bambosan/bsbe-renewed/releases',1).then(val => { bsbere_lu.innerHTML = val});
 			load('https://api.github.com/repos/bambosan/bsbe-renewed/releases',2).then(val => { bsbere_sf.innerHTML = val});
 			load('https://api.github.com/repos/bambosan/bsbe-renewed/releases',3).then(val => { bsbere_td.innerHTML = val});
 			load('https://api.github.com/repos/bambosan/Nori-Shaders-BE/releases',1).then(val => { nori_lu.innerHTML = val});

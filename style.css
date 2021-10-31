@@ -1,58 +1,50 @@
+/* created by bambosan */
+
 *{margin: 0; padding: 0}
 a{color: white}
 a:hover{color: #4682B4}
 body{
 	font-family: 'Quicksand';
 	background: #292F33;
-text-shadow: 3px 3px 5px black;
 	-webkit-tap-highlight-color:transparent
 }
 header{
 	margin: 10vh 0 0 10px;
 	text-align: left;
-	font-size: 3em;
-color: white
+	font-size: 3em
 }
 hr{
-	width: 95%;
+	width: 100%;
 	height: 1.1px;
-	background: #667580;
 	border: none;
-	margin: 20px 10px 20px 10px;
-
+	margin: 20px 0 20px 0;
+	background: #667580
 }
 footer{
 	margin: 80px;
 	text-align: center;
-	font-size: 1em;
-color: white
+	font-size: 1em
 }
 .name{
-	float:left;
-	display: block;
+	float: left;
 	font-size: 1.5em;
-	padding: 25px 0 0 10px;
-color: white
+	padding: 25px 0 0 10px
 }
-.navb{
-	width: auto;
-	overflow: hidden;
-	padding-top: 10px
-}
+.navb{width: auto; padding-top: 10px}
 .navb a{
 	float: right;
 	display: block;
 	padding: 10px;
-	font-size: 2em;
+	font-size: 2em
 }
+header, .name, .navb a{text-shadow: 3px 3px 5px black}
 .navb a.active{text-shadow: 0 0 5px}
 .navb .icon{display: none}
 .con{
 	position: relative;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: center;
-	overflow: hidden
+	justify-content: center
 }
 .col{
 	height: auto;
@@ -71,28 +63,35 @@ color: white
 .col p{
 	font-size: 1em;
 	line-height: 25px;
-	padding: 2px;
-color:white
+	padding: 2px
 }
 .col img{
 	width: 100%;
 	height: 100%;
 	border-radius: 5px;
-box-shadow: 3px 3px 5px black
+	box-shadow: 3px 3px 5px black
 }
-
+header, footer, .name, .col p{color: white}
+@media (max-width: 400px){
+	header{font-size: 2em}
+	.name{font-size: 1.3em}
+	.navb a{font-size: 1.5em}
+	.col .hpack{font-size: 1.8em}
+	.col .infpack{font-size: 0.6em}
+	.col p{font-size: 0.9em}
+}
 @media (max-width: 720px){
 	.navb a{display: none}
 	.navb a.icon{float: right; display: block}
-	.navb.navbm a {
+	.navb.navbm a{
 		float: none;
 		display: block;
-		text-align: right;
+		text-align: right
 	}
 }
 @media (min-width: 720px){
 	header{margin: 30vh 0 0 40px}
-hr{margin: 30px 0 30px 0}
+	hr{margin: 30px 0 30px 0}
 	.name{padding: 20px 0 30px 40px}
 	.navb{padding: 10px 30px 0 0}
 	.col{margin: 10px 40px 10px 40px}
