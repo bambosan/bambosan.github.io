@@ -2,14 +2,14 @@
 
 *{margin: 0; padding: 0}
 a{color: white}
-a:hover{color: #4682B4}
+a:hover{color: #C70500}
 body{
-	font-family: 'Quicksand';
-	background: #292F33;
+	font-family:Open Sans;
+	background: #000000;
 	-webkit-tap-highlight-color:transparent
 }
 header{
-	margin: 15vh 0 0 10px;
+	margin: 15vh 0 20px 15px;
 	text-align: left;
 	font-size: 3em
 }
@@ -26,9 +26,8 @@ footer{
 	font-size: 1em
 }
 .name{
-	float: left;
 	font-size: 1.5em;
-	padding: 25px 0 0 10px
+	padding: 25px 0 0 15px
 }
 .navb{width: auto; padding-top: 10px}
 .navb a{
@@ -49,8 +48,10 @@ header, .name, .navb a{text-shadow: 3px 3px 5px black}
 .col{
 	height: auto;
 	width: auto;
-	margin: 10px;
-	padding: 0
+	margin: 15px;
+	padding: 15px;
+	background: #141414;
+	border-radius: 5px
 }
 .col .hpack{
 	display: block;
@@ -59,7 +60,7 @@ header, .name, .navb a{text-shadow: 3px 3px 5px black}
 	text-align: left;
 	text-decoration: none
 }
-.col .infpack{font-size: 0.7em; color: #667580}
+.col .infpack{font-size: 0.7em}
 .col p{
 	font-size: 1em;
 	line-height: 25px;
@@ -71,7 +72,7 @@ header, .name, .navb a{text-shadow: 3px 3px 5px black}
 	border-radius: 5px;
 	box-shadow: 3px 3px 5px black
 }
-header, footer, .name, .col p{color: white}
+header, footer, .name, .hpack, .col p{color: #ABABAB}
 @media (max-width: 400px){
 	header{font-size: 2em}
 	.name{font-size: 1.3em}
@@ -89,6 +90,7 @@ header, footer, .name, .col p{color: white}
 		text-align: right
 	}
 }
+/*
 @media (min-width: 720px){
 	header{margin: 30vh 0 0 40px}
 	hr{margin: 30px 0 30px 0}
@@ -108,3 +110,4 @@ header, footer, .name, .col p{color: white}
 	.col .hpack{margin-left: 20px}
 	.col p{margin: 0 40px 0 20px; width: 57vw}
 }
+*/
