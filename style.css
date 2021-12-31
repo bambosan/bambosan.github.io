@@ -1,14 +1,20 @@
 /* created by bambosan */
 
 *{margin: 0; padding: 0}
-a{color: white}
+a{color: #ABABAB}
 a:hover{color: #C70500}
 body{
 	font-family:Open Sans;
 	background: #000000;
+	color: #ABABAB;
 	-webkit-tap-highlight-color:transparent;
-	max-width: 700px;
+	max-width: 800px;
 	margin: auto;
+}
+img{
+	width: 45%;
+	height: auto;
+	padding: 5px
 }
 footer{
 	margin: 50px;
@@ -28,28 +34,25 @@ header{
 .col{
 	height: auto;
 	margin: 15px;
-	padding: 15px;
-	background: #141414;
 	border-radius: 5px
 }
-.col .hpack{
+.hpack{
 	display: block;
 	font-size: 2em;
 	line-height: 30px;
 	text-align: left;
 	text-decoration: none
 }
-.col .infpack{font-size: 0.7em}
-.col p{
+.infpack{font-size: 0.7em}
+p{
 	font-size: 1em;
 	line-height: 25px;
 	padding: 2px
 }
-header, footer, .name, .hpack, .col p{color: #ABABAB}
 @media (max-width: 400px){
 	header{font-size: 2em}
 	.name{font-size: 1.3em}
-	.col .hpack{font-size: 1.8em}
-	.col .infpack{font-size: 0.6em}
-	.col p{font-size: 0.9em}
+	.hpack{font-size: 1.8em}
+	.infpack{font-size: 0.6em}
+	p{font-size: 0.9em}
 }
