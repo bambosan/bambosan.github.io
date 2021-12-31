@@ -7,54 +7,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/1bdb927010.js"></script>
 		<link href="./style.css" rel="stylesheet">
-	</head>
-	<body>
-		<div class="name"><i class="fab fa-github"></i> bambosan repositories</div>
-		<header>Active Project</header>
-		<div class="con">
-			<div class="col">
-				<a class="hpack" href="#">BSBE Renewed</a>
-				<p class="infpack">
-					<i class="far fa-calendar-check"></i>&nbsp;<span id="bsbere_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="bsbere_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="bsbere_td"></span>
-				</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div>
-			<div class="col">
-				<a class="hpack" href="#">Nori Shaders BE</a>
-				<p class="infpack">
-					<i class="far fa-calendar-check"></i>&nbsp;<span id="nori_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="nori_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="nori_td"></span>
-				</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div>
-			<div class="col">
-				<a class="hpack" href="#">Mirai Shaders BE</a>
-				<p class="infpack">
-					<i class="far fa-calendar-check"></i>&nbsp;<span id="mirai_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="mirai_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="mirai_td"></span>
-				</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-			</div>
-		</div>
-		<header>Archived Project</header>
-		<div class="con">
-			<div class="col">
-				<a class="hpack" href="#">Bicubic Shaders BE</a>
-				<p class="infpack">
-					<i class="far fa-calendar-check"></i>&nbsp;<span id="bsbe_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="bsbe_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="bsbe_td"></span>
-				</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			</div>
-		</div>
-		<header>Something</header>
-		<div class="con">
-			<div class="col">
-				<a class="twitter-timeline" data-width="800" data-height="550" data-theme="dark" href="https://twitter.com/bambo_san?ref_src=twsrc%5Etfw"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-			</div>
-		</div><br><br>
-		<footer><p>&copy; 2021 bambosan</p></footer>
 		<script>
-			document.querySelector(".icon").addEventListener("click",() => {
-				document.querySelector(".navb").classList.toggle("navbm")
-			});
 			async function load(url, sel){
 				const obj = await (await fetch(url)).json();
 				if(obj == 0){ return "not released"; } else {
@@ -84,5 +37,47 @@
 			load(bsbe,2).then(val => { bsbe_sf.innerHTML = val});
 			load(bsbe,3).then(val => { bsbe_td.innerHTML = val});
 		</script>
+	</head>
+
+	<body>
+			<div class="name"><i class="fab fa-github"></i> bambosan repositories</div>
+			<header>Active Project</header>
+		<div class="col">
+			<a class="hpack" href="#">BSBE Renewed</a>
+			<p class="infpack">
+				<i class="far fa-calendar-check"></i>&nbsp;<span id="bsbere_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="bsbere_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="bsbere_td"></span>
+				</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="col">
+				<a class="hpack" href="#">Nori Shaders BE</a>
+				<p class="infpack">
+					<i class="far fa-calendar-check"></i>&nbsp;<span id="nori_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="nori_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="nori_td"></span>
+				</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="col">
+				<a class="hpack" href="#">Mirai Shaders BE</a>
+				<p class="infpack">
+					<i class="far fa-calendar-check"></i>&nbsp;<span id="mirai_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="mirai_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="mirai_td"></span>
+				</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+			</div>
+		<header>Archived Project</header>
+		<div class="con">
+			<div class="col">
+				<a class="hpack" href="#">Bicubic Shaders BE</a>
+				<p class="infpack">
+					<i class="far fa-calendar-check"></i>&nbsp;<span id="bsbe_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="bsbe_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="bsbe_td"></span>
+				</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+		<header>Something</header>
+		<div class="con">
+			<div class="col">
+				<a class="twitter-timeline" data-width="800" data-height="550" data-theme="dark" href="https://twitter.com/bambo_san?ref_src=twsrc%5Etfw"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+		</div><br><br>
+		<footer><p>&copy; 2021 bambosan</p></footer>
 	</body>
 </html>
