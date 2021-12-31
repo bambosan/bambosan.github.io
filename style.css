@@ -49,8 +49,9 @@ p{
 	line-height: 25px;
 	padding: 2px
 }
-@media (max-width: 400px){
+@media (max-width: 512px){
 	header{font-size: 2em}
+	img{width: 100%}
 	.name{font-size: 1.3em}
 	.hpack{font-size: 1.8em}
 	.infpack{font-size: 0.6em}
