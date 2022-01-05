@@ -46,6 +46,7 @@ header{
 .infpack{font-size: 0.7em}
 p{
 	font-size: 1em;
+	text-align: justify;
 	line-height: 25px;
 	padding: 2px
 }
