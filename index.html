@@ -1,91 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title></title>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-		<script src="https://kit.fontawesome.com/1bdb927010.js"></script>
-		<link href="./style.css" rel="stylesheet">
-		<script>
-			async function load(url, sel){
-				const obj = await (await fetch(url)).json();
-				if(obj == 0){ return "not released"; } else {
-					switch(sel){
-						case 1: let uval = obj[0].assets[0].updated_at;
-							return uval.slice(0,10); break;
-						case 2: let fsval = obj[0].assets[0].size;
-							return (Math.round((fsval/1e6)*1000)/1000)+" MB"; break;
-						case 3: return obj[0].assets[0].download_count; break;
-					}
-				}
-			}
-			const bsbere = 'https://api.github.com/repos/bambosan/bsbe-renewed/releases';
-			load(bsbere,1).then(val => { bsbere_lu.innerHTML = val});
-			load(bsbere,2).then(val => { bsbere_sf.innerHTML = val});
-			load(bsbere,3).then(val => { bsbere_td.innerHTML = val});
-			const nori = 'https://api.github.com/repos/bambosan/Nori-Shaders-BE/releases';
-			load(nori,1).then(val => { nori_lu.innerHTML = val});
-			load(nori,2).then(val => { nori_sf.innerHTML = val});
-			load(nori,3).then(val => { nori_td.innerHTML = val});
-			const mirai = 'https://api.github.com/repos/bambosan/Mirai-Shaders-BE/releases';
-			load(mirai,1).then(val => { mirai_lu.innerHTML = val});
-			load(mirai,2).then(val => { mirai_sf.innerHTML = val});
-			load(mirai,3).then(val => { mirai_td.innerHTML = val});
-			const vine = 'https://api.github.com/repos/bambosan/Vine-Shaders-BE/releases';
-			load(vine,1).then(val => { vine_lu.innerHTML = val});
-			load(vine,2).then(val => { vine_sf.innerHTML = val});
-			load(vine,3).then(val => { vine_td.innerHTML = val});
-			const bsbe = 'https://api.github.com/repos/bambosan/bicubic-shaders-be/releases';
-			load(bsbe,1).then(val => { bsbe_lu.innerHTML = val});
-			load(bsbe,2).then(val => { bsbe_sf.innerHTML = val});
-			load(bsbe,3).then(val => { bsbe_td.innerHTML = val});
-		</script>
-	</head>
-
-	<body>
-		<div class="name"><i class="fab fa-github"></i> bambosan repositories</div>
-		<header><b>Active Project</b></header>
-		<div class="col" style="padding: 15px; background: #141414">
-			<a class="hpack" href="./mirai-page.html"><b>Mirai Shaders BE</b></a>
-			<p class="infpack">
-				<i class="far fa-calendar-check"></i>&nbsp;<span id="mirai_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="mirai_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="mirai_td"></span>
-				</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-		</div>
-		<div class="col" style="padding: 15px; background: #141414">
-			<a class="hpack" href="#"><b>Vine Shaders BE</b></a>
-			<p class="infpack">
-				<i class="far fa-calendar-check"></i>&nbsp;<span id="vine_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="vine_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="vine_td"></span>
-				</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-		</div>
-		<div class="col" style="padding: 15px; background: #141414">
-			<a class="hpack" href="#"><b>BSBE Renewed</b></a>
-			<p class="infpack">
-				<i class="far fa-calendar-check"></i>&nbsp;<span id="bsbere_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="bsbere_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="bsbere_td"></span>
-				</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div>
-		<div class="col" style="padding: 15px; background: #141414">
-			<a class="hpack" href="#"><b>Nori Shaders BE</b></a>
-			<p class="infpack">
-				<i class="far fa-calendar-check"></i>&nbsp;<span id="nori_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="nori_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="nori_td"></span>
-				</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div>
-		<header><b>Archived Project</b></header>
-		<div class="col" style="padding: 15px; background: #141414">
-			<a class="hpack" href="#"><b>Bicubic Shaders BE</b></a>
-			<p class="infpack">
-				<i class="far fa-calendar-check"></i>&nbsp;<span id="bsbe_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="bsbe_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="bsbe_td"></span>
-			</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		</div>
-		<header><b>Something</b></header>
-		<div class="col" style="padding: 15px; background: #141414">
-			<a class="twitter-timeline" data-width="800" data-height="550" data-theme="dark" href="https://twitter.com/bambo_san?ref_src=twsrc%5Etfw"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		</div>
-		<footer><p>&copy; 2021 bambosan</p></footer>
-	</body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bambosan homepage</title>
+  <script src="https://kit.fontawesome.com/1bdb927010.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="contain">
+    <nav id="navbar">
+      <a href="#" id="gico"><i class="fab fa-github"></i> Github</a>
+      <button id="navbtn">Home</button>
+      <div id="navcon">
+        <a href="#">JavaScript</a>
+        <a href="#">Python</a>
+        <a href="#">C++</a>
+        <a href="#">Minecraft</a>
+      </div>
+    </nav>
+    <br>
+    <div id="headers">
+      <p id="mainhead">Hi<br>Im sad/bambosan</p>
+      <p id="labout">just an ordinary person who likes programming language also makes some projects on github</p>
+    </div>
+    <br>
+    <p id="chead">Repository</p>
+    <div id="box1">
+      <a href="#">Mirai Shaders BE</a>
+      <p>A Shaders for Minecraft: Bedrock edition</p>
+    </div>
+    <br>
+    <div id="box1">
+      <a href="#">Mirai Shaders JE</a>
+      <p>A shader for Minecraft: Java Edition with realistic theme. This project is discontinued due to some reasons :(</p>
+    </div>
+    <br>
+    <div id="box1">
+      <a href="#">Water Only Shader</a>
+      <p>simple shader for Minecraft: Java Edition that can enchant your  waters</p>
+    </div>
+    <br>
+    <div id="box1">
+      <a href="#">Nori Shaders BE</a>
+      <p>A shader for Minecraft: Bedrock Edition</p>
+    </div>
+    <br>
+    <div id="box1">
+      <a href="#">Example Nori PBR (VNR edit)</a>
+      <p>Example PBR texture packs for Nori Shader BE</p>
+    </div>
+    <br>
+    <div id="box1">
+      <a href="#">Vine Shader BE</a>
+      <p>a lightweight shader for Minecraft: Bedrock Edition</p>
+    </div>
+    <br>
+    <div id="box1">
+      <a href="#">BSBE Renewed</a>
+      <p>a new version of bicubic shaders</p>
+    </div>
+    <br>
+    <div id="box1">
+      <a href="#">Bicubic Shader BE (BSBE)</a>
+      <p>a shader for Minecraft: Bedrock Edition with beautiful color scheme</p>
+    </div>
+    <br><br>
+    <p id="chead">See My Activity on</p>
+    <div id="box2">
+      <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+      <br>
+      <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+    </div>
+    <footer>
+      <p>Github page<br>by bambosan 2022</p>
+    </footer>
+  </div>
+  <script src="./script.js"></script>
+</body>
 </html>
