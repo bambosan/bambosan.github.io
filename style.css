@@ -9,7 +9,10 @@ a{
     text-decoration: none;
     transition: all 0.3s
 }
-a:hover{ color: red }
+a:hover, a:focus, a:active {
+    -webkit-tap-highlight-color: #00000000;
+    color: red;
+}
 #contain{
     margin: 0 auto;
     padding: 20px;
@@ -30,7 +33,7 @@ nav #gico{ left: 5px }
 nav #navcon{ right: 0px }
 nav #navcon a{ padding: 0 5px 0 8px }
 #navbtn{ display: none }
-#headers{ padding: 130px 0 10px 0 }
+#headers{ padding: 120px 0 30px 0 }
 #headers #mainhead{ font-size: 3.5em; text-shadow: 4px 4px 10px black }
 #headers #labout{ text-shadow: 2px 2px 5px black }
 #headers #labout{ font-size: 14px }
@@ -106,7 +109,7 @@ footer p{ text-shadow: 3px 3px 4px black }
         background-color: #1a1a1a
     }
     .navtog{
-        height: 120px !important;
+        height: 100px !important;
         box-shadow: 4px 4px 5px 1px black
     }
     nav #navcon a{ display: block }
