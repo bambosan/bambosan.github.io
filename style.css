@@ -85,13 +85,13 @@ footer p{ text-shadow: 3px 3px 4px black }
     nav a{ font-size: 1em }
     nav #gico{
         position: absolute;
-        top: 9px;
+        top: 11px;
         left: 5px
     }
     nav #navbtn{
         position: absolute;
         display: block;
-        top: 8px;
+        top: 12px;
         right: 8px;
         border: none;
         background: none;
@@ -109,7 +109,7 @@ footer p{ text-shadow: 3px 3px 4px black }
         background-color: #1a1a1a
     }
     .navtog{
-        height: 100px !important;
+        height: 90px !important;
         box-shadow: 4px 4px 5px 1px black
     }
     nav #navcon a{ display: block }
