@@ -6,144 +6,162 @@
   <title>bambosan homepage</title>
   <script src="https://kit.fontawesome.com/1bdb927010.js"></script>
   <style>
-    *{ margin: 0; padding: 0 }
+    *{
+      --fgc: #dfdfdf;
+      --anc: #dfdfdf;
+      --aac: red;
+      --bgc: #131313;
+      --acc: #222222;
+      --hrc: #5c5c5c;
+      margin: 0;
+      padding: 0
+    }
+    @keyframes anim1{
+      from{
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to{
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+    @keyframes anim2{
+      from{
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to{
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+    @keyframes anim3{
+      from{
+        width: 0;
+      }
+      to{
+        width: 100%;
+      }
+    }
     body{
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        color: #dfdfdf;
-        background-color: #1f1f1f;
-        -webkit-tap-highlight-color: transparent;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      color: var(--fgc);
+      background-color: var(--bgc);
+      -webkit-tap-highlight-color: transparent
     }
     a{
-        color: #dfdfdf;
-        text-decoration: none;
-        transition: all 0.3s
+      color: var(--anc);
+      text-decoration: none;
+      transition: all 0.3s
     }
-    a:hover{ color: red; }
-    #contain{
-        margin: 0 auto;
-        padding: 0 0 20px;
-        width: 70vw;
+    hr{
+      height: 1px;
+      background-color: var(--hrc);
+      border: none;
+      animation-name: anim3;
+      animation-duration: 1s;
     }
-    #headers {
+    a:hover{ color: var(--aac) }
+    #con{
+      margin: 0 auto;
+      padding: 0 0 20px;
+      width: 70vw
+    }
+    #he1{
       position: relative;
-      padding: 0;
       width: 100%;
-      height: 30vh;
-      box-shadow: 4px 4px 5px 1px black
+      height: 200px;
+      background-color: var(--acc);
+      animation-name: anim1;
+      animation-duration: 0.5s
     }
-    #headers #tithead{
+    #he1 #tith{
       position: absolute;
-      top: 20vh;
+      top: 150px;
       left: 20px;
-      font-size: 3.5em;
+      font-size: 3em;
       line-height: 10px;
-      text-shadow: 4px 4px 10px black
     }
-    #chead{
-        margin-bottom: 10px;
-        font-size: 1.8em;
-        text-shadow: 3px 3px 6px black
+    #he2{
+      margin-bottom: 5px;
+      font-size: 1.8em;
+      animation-name: anim2;
+      animation-duration: 0.5s
     }
-    #box1{
-        padding: 10px;
-        line-height: 25px;
-        background-color: #1a1a1a;
-        box-shadow: 4px 4px 5px 1px black
+    #box{
+      display: inline-block;
+      width: auto;
+      margin-bottom: 10px;
+      padding: 10px;
+      line-height: 25px;
+      background-color: var(--acc);
+      animation-name: anim1;
+      animation-duration: 2s
     }
-    #box1 a{ font-size: 1.5em;}
-    #box1 p{ font-size: 1em }
-    #box1 ul{ margin-left: 20px; font-size: 1em }
-    #box2{
-        padding: 10px;
-        width: 18vw;
-        line-height: 30px;
-        background-color: #1a1a1a;
-        box-shadow: 4px 4px 5px 1px black
-    }
-    #box2 a{ font-size: 1.2em }
-    footer{ padding: 80px 0 20px 0 }
-    footer p{ text-shadow: 3px 3px 4px black }
-    #box1 .swiper-slide img{
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover
-    }
-    @media (max-width: 850px){
-        #contain{
-            margin: 0 auto;
-            padding: 15px;
-            width: 90vw
-        }
-        #box2{ width: 25vw }
-    }
+    #box a{ font-size: 1.5em }
+    #box p{ font-size: 1em }
+    #box ul{ margin-left: 20px; font-size: 1em }
+    #box:last-of-type{ line-height: 35px; }
+    #box:last-of-type a{ font-size: 1.2em }
+    footer{ padding: 50px 0 20px 0 }
+    @media (max-width: 850px){ #con{ width: 90vw } }
     @media (max-width: 658px){
-        #contain{
-            margin: 0 auto;
-            padding: 15px;
-            width: 90vw
-        }
-        #headers { height: 150px }
-        #headers #tithead{
-          position: absolute;
-          top: 90px;
-          left: 16px;
-          font-size: 2.5em;
-          text-shadow: 4px 4px 10px black
-        }
-        #chead{ font-size: 1.5em }
-        #box1 a{ font-size: 1.2em }
+      #con{ width: 90vw }
+      #he1{ height: 150px }
+      #he1 #tith{
+        position: absolute;
+        top: 100px;
+        left: 14px;
+        font-size: 2.2em;
+        text-shadow: 4px 4px 10px black
+      }
+      #he2{ font-size: 1.5em }
+      #box a{ font-size: 1.2em }
     }
     @media (max-width: 500px){
-        #contain{
-            margin: 0 auto;
-            padding: 10px;
-            width: 95vw
-        }
-        #box2{ width: 35vw }
+      #con{
+        padding: 10px;
+        width: 95vw
+      }
     }
   </style>
 </head>
 <body>
-  <div id="contain">
-    <div id="headers">
-      <p id="tithead">sad/bambosan</p>
+  <div id="con">
+    <div id="he1">
+      <p id="tith">sad/bambosan</p>
     </div>
     <br>
-    <p id="chead">Projects</p>
-    <div id="box1">
+    <p id="he2">Projects</p><hr><br>
+    <div id="box">
       <a href="https://bambosan.github.io/BSBE-Renewed/" target="_blank">BSBE Renewed</a>
       <p>A shader for Minecraft: Bedrock Edition</p>
     </div>
-    <br>
-    <div id="box1">
+    <div id="box">
       <a href="https://bambosan.github.io/Water-Only-Shaders/" target="_blank">Water Only Shader</a>
       <p>A shader for Minecraft: Java Edition</p>
     </div>
-    <br>
-    <div id="box1">
+    <div id="box">
       <a href="https://bambosan.github.io/Nori-Shaders-BE/" target="_blank">Nori Shader BE</a>
       <p>A shader for Minecraft: Bedrock Edition</p>
     </div>
-    <br>
-    <div id="box1">
+    <div id="box">
       <a href="https://bambosan.github.io/Mirai-Shaders-BE/" target="_blank">Mirai Shader BE</a>
       <p>A shader for Minecraft: Bedrock Edition</p>
     </div>
-    <br>
-    <div id="box1">
+    <div id="box">
       <a href="https://bambosan.github.io/CuacaGL/" target="_blank">CuacaGL</a>
       <p>Cuaca dengan WebGL</p>
     </div>
-    <br>
-    <div id="box1">
+    <div id="box">
       <a href="https://bambosan.github.io/Vine-Shaders-BE/" target="_blank">Vine Shader BE</a>
       <p>A shader for Minecraft: Bedrock Edition</p>
     </div>
     <br>
     <br>
-    <p id="chead">See My Activity on</p>
-    <div id="box2">
+    <p id="he2">See My Activity on</p><hr><br>
+    <div id="box">
       <a href="https://github.com/bambosan" target="_blank"><i class="fab fa-github"></i> Github</a>
       <br>
       <a href="https://twitter.com/bambo_san" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
