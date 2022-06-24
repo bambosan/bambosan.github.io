@@ -47,8 +47,7 @@
     body{
       font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       color: var(--fgc);
-      
-      
+      background-color: var(--bgc);
       -webkit-tap-highlight-color: transparent
     }
     a{
@@ -115,12 +114,13 @@
       }
     }
     #sky{
-      position:fixed;
+      position: fixed;
       top:0;
       left:0;
       width: 100%;
       height: 100%;
-      z-index:-1
+      z-index:-1;
+      overflow: hidden
     }
   </style>
 </head>
