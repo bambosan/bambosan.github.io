@@ -47,7 +47,8 @@
     body{
       font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       color: var(--fgc);
-      background-color: var(--bgc);
+      
+      
       -webkit-tap-highlight-color: transparent
     }
     a{
@@ -64,6 +65,7 @@
     }
     a:hover{ color: var(--aac) }
     #con{
+      
       margin: 0 auto;
       padding: 0 0 20px;
       width: 70vw
@@ -112,9 +114,109 @@
         width: 95vw
       }
     }
+    #sky{
+      position:fixed;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      z-index:-1
+    }
   </style>
 </head>
 <body>
+  <canvas id="sky"></canvas>
+  <script src="https://mcbeeringi.github.io/petitgl/petitgl.js"></script>
+  <script>
+    const main=new PetitGL(sky,[0,0,0,1])
+      .resize(innerWidth, innerHeight)
+      .att([
+        {name:'_uv',data:[-1,-1, 1,-1, -1,1, 1,1],slice:2}
+      ])
+      .ibo([
+        {name:'ibo',data:[0,1,2, 3,2,1]}
+      ])
+      .compile(
+        'test',
+        `attribute vec2 UV;
+void main(){ gl_Position=vec4(UV,0,1);}`,
+        `precision highp float;
+uniform float time;
+uniform vec2 res;
+
+/*
+Parallax Stars
+shader by @hugoaboud
+	
+License: GPL-3.0
+*/
+
+// Background Gradient
+vec4 _TopColor = vec4(0.24,0.27,0.41,1);
+vec4 _BottomColor = vec4(0.07,0.11,0.21,1);
+
+// Star colors
+vec4 _Star1Color = vec4(1,0.94,0.72,0.7);
+vec4 _Star2Color = vec4(0.18,0.03,0.41,0.7);
+vec4 _Star3Color = vec4(0.63,0.50,0.81,0.7);
+
+// Star grid
+float _Grid = 40.0;
+float _Size = 0.15;
+
+// Parallax Speed
+vec2 _Speed = vec2(0, 3);
+
+// Generates a random 2D vector from another 2D vector
+// seed must be a large number
+// output range: ([0..1[,[0..1[)
+vec2 randVector(in vec2 vec, in float seed)
+{
+    return vec2(fract(sin(vec.x*999.9+vec.y)*seed),fract(sin(vec.y*999.9+vec.x)*seed));
+}
+
+// Draw star grid
+void drawStars(inout vec4 fragColor, in vec4 color, in vec2 uv, in float grid, in float size, in vec2 speed, in float seed){
+    uv += time * speed;
+    
+    // Split UV into local grid
+    vec2 local = mod(uv,grid)/grid;
+    
+    // Random vector for each grid cell
+    vec2 randv = randVector(floor(uv/grid), seed)-0.5;
+    float len = length(randv);
+    
+    // If center + random vector lies inside cell
+    // Draw circle
+    if (len < 0.5) {
+        // Draw circle on local grid
+        float radius = 1.0-distance(local, vec2(0.5,0.5)+randv)/(size*(0.5-len));
+        if (radius > 0.0) fragColor += color*radius;
+    }
+}
+
+void main(){
+    // Background
+    gl_FragColor = mix(_TopColor, _BottomColor, gl_FragCoord.y/res.y);
+    
+    // Stars
+    drawStars(gl_FragColor, _Star1Color, gl_FragCoord.xy, _Grid, _Size, _Speed, 123456.789);
+   	drawStars(gl_FragColor, _Star2Color, gl_FragCoord.xy, _Grid*2.0/3.0, _Size, _Speed/1.2, 345678.912);
+    drawStars(gl_FragColor, _Star3Color, gl_FragCoord.xy, _Grid/2.0, _Size*3.0/4.0, _Speed/1.6, 567891.234);
+    gl_FragColor.rgb *= 0.5;
+}`
+      )
+      .defAtt('test',['UV'])
+      .defUni('test',['time','res']),loop=()=>{ requestAnimationFrame(loop);
+        main.uni('test',
+        [
+				  {loc:'time',data:[(Date.now()*.001)%86400-43200],type:'f'},
+				  {loc:'res',data:[main.c.width,main.c.height],type:'f'}
+			  ]
+        ).draw('test',[{loc:'UV',att:'_uv'}],'ibo').flush();
+      };
+    loop();
+  </script>
   <div id="con">
     <p id="tith">Hi I'm sad/bambosan<br><span id="abo">An ordinary person who likes programming and night time<br>I also created some stuff on github.</span></p>
     <br>
@@ -154,7 +256,7 @@
       <a href="https://www.youtube.com/channel/UCVhl5xGvRnlbIrb6K3CmCHA" target="_blank"><i class="fab fa-youtube" target="_blank"></i> YouTube</a>
     </div>
     <footer>
-      <p>Github page<br>by sad/bambosan 2022</p>
+      sad/bambosan 2022<br>background made with <a href="https://mcbeeringi.github.io/petitgl/"><u>PetitGL</u></a> by <a href="https://twitter.com/mcbeeringi/"><u>McbeEringi</u></a>
     </footer>
   </div>
 </body>
