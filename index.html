@@ -162,10 +162,10 @@ vec4 _Star3Color = vec4(0.63,0.50,0.81,0.7);
 
 // Star grid
 float _Grid = 40.0;
-float _Size = 0.15;
+float _Size = 0.1;
 
 // Parallax Speed
-vec2 _Speed = vec2(0, 3);
+vec2 _Speed = vec2(0, 10);
 
 // Generates a random 2D vector from another 2D vector
 // seed must be a large number
@@ -203,7 +203,7 @@ void main(){
     drawStars(gl_FragColor, _Star1Color, gl_FragCoord.xy, _Grid, _Size, _Speed, 123456.789);
    	drawStars(gl_FragColor, _Star2Color, gl_FragCoord.xy, _Grid*2.0/3.0, _Size, _Speed/1.2, 345678.912);
     drawStars(gl_FragColor, _Star3Color, gl_FragCoord.xy, _Grid/2.0, _Size*3.0/4.0, _Speed/1.6, 567891.234);
-    gl_FragColor.rgb *= 0.5;
+    //gl_FragColor.rgb *= 0.5;
 }`
       )
       .defAtt('test',['UV'])
