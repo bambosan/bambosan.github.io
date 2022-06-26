@@ -7,7 +7,8 @@
   <meta name="description" content="main page of bambosan site">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8231611512488101"
      crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/1bdb927010.js"></script>
+  <script src="https://kit.fontawesome.com/1bdb927010.js" crossorigin="anonymous"></script>
+  <script src="https://mcbeeringi.github.io/petitgl/petitgl.js"></script>
   <style>
     *{
       --fgc: #dfdfdf;
@@ -15,7 +16,7 @@
       --aac: red;
       --bgc: linear-gradient(rgb(18, 28, 53), rgb(61, 69, 104));
       --acc: #222222;
-      --hrc: #8c7bac;
+      --hrc: #9a92aa;
       margin: 0;
       padding: 0
     }
@@ -50,7 +51,6 @@
     body{
       font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       color: var(--fgc);
-      background-color: var(--bgc);
       -webkit-tap-highlight-color: transparent
     }
     a{
@@ -116,7 +116,7 @@
         width: 95vw
       }
     }
-    #sky{
+    canvas{
       position: fixed;
       top:0;
       left:0;
@@ -128,7 +128,6 @@
 </head>
 <body>
   <canvas id="sky"></canvas>
-  <script src="https://mcbeeringi.github.io/petitgl/petitgl.js"></script>
   <script>
     const main=new PetitGL(sky,[0,0,0,1])
       .resize(innerWidth, innerHeight)
@@ -146,66 +145,23 @@ void main(){ gl_Position=vec4(UV,0,1);}`,
 uniform float time;
 uniform vec2 res;
 
-/*
-Parallax Stars
-shader by @hugoaboud
-	
-License: GPL-3.0
-*/
-
-// Background Gradient
-vec4 _TopColor = vec4(0.24,0.27,0.41,1);
-vec4 _BottomColor = vec4(0.07,0.11,0.21,1);
-
-// Star colors
-vec4 _Star1Color = vec4(1,0.94,0.72,0.7);
-vec4 _Star2Color = vec4(0.18,0.03,0.41,0.7);
-vec4 _Star3Color = vec4(0.63,0.50,0.81,0.7);
-
-// Star grid
-float _Grid = 40.0;
-float _Size = 0.15;
-
-// Parallax Speed
-vec2 _Speed = vec2(0, 10);
-
-// Generates a random 2D vector from another 2D vector
-// seed must be a large number
-// output range: ([0..1[,[0..1[)
-vec2 randVector(in vec2 vec, in float seed)
-{
-    return vec2(fract(sin(vec.x*999.9+vec.y)*seed),fract(sin(vec.y*999.9+vec.x)*seed));
+vec2 rand22(vec2 p){
+  p = vec2(dot(p,vec2(12.9898,78.233)),dot(p,vec2(26.65125,83.054543)));
+  return fract(sin(p)*43758.5453);
 }
-
-// Draw star grid
-void drawStars(inout vec4 fragColor, in vec4 color, in vec2 uv, in float grid, in float size, in vec2 speed, in float seed){
-    uv += time * speed;
-    
-    // Split UV into local grid
-    vec2 local = mod(uv,grid)/grid;
-    
-    // Random vector for each grid cell
-    vec2 randv = randVector(floor(uv/grid), seed)-0.5;
-    float len = length(randv);
-    
-    // If center + random vector lies inside cell
-    // Draw circle
-    if (len < 0.5) {
-        // Draw circle on local grid
-        float radius = 1.0-distance(local, vec2(0.5,0.5)+randv)/(size*(0.5-len));
-        if (radius > 0.0) fragColor += color*radius;
-    }
+float stars(vec2 p){
+  p *= 1024.;
+  float d = 1.e10;
+  for(float i=-1.; i<=1.; i+=1.){for(float j=-1.; j<=1.; j+=1.){
+    vec2 g = floor(p)+vec2(i,j);
+    g = floor(p)-g-rand22(mod(g,res))+fract(sin(dot(g.xy,vec2(54.90898,18.233)))*4337.5453);g*=1.25;
+    d = min(d,dot(g,g));
+  }}
+  return 2.*(smoothstep(.95,1.,(1.-sqrt(d))));
 }
-
 void main(){
-    // Background
-    gl_FragColor = mix(_TopColor, _BottomColor, gl_FragCoord.y/res.y);
-    
-    // Stars
-    drawStars(gl_FragColor, _Star1Color, gl_FragCoord.xy, _Grid, _Size, _Speed, 123456.789);
-   	drawStars(gl_FragColor, _Star2Color, gl_FragCoord.xy, _Grid*2.0/3.0, _Size, _Speed/1.2, 345678.912);
-    drawStars(gl_FragColor, _Star3Color, gl_FragCoord.xy, _Grid/2.0, _Size*3.0/4.0, _Speed/1.6, 567891.234);
-    //gl_FragColor.rgb *= 0.5;
+  vec2 c = gl_FragCoord.xy/res;c.x *= res.x/res.y;
+  gl_FragColor = mix(vec4(.24,.27,.41,1),vec4(0.07,0.11,0.21,1),c.y)+vec4(vec3(stars(c+time*1e-4)),1);
 }`
       )
       .defAtt('test',['UV'])
@@ -266,7 +222,7 @@ void main(){
       <a href="https://www.youtube.com/channel/UCVhl5xGvRnlbIrb6K3CmCHA" target="_blank"><i class="fab fa-youtube" target="_blank"></i> YouTube</a>
     </div>
     <footer>
-      bambosan 2022<br>background with <a href="https://mcbeeringi.github.io/petitgl/"><u>PetitGL</u></a> by <a href="https://twitter.com/mcbeeringi/"><u>McbeEringi</u></a>
+      bambosan 2022<br>background rendered with <a href="https://mcbeeringi.github.io/petitgl/"><u>PetitGL</u></a> by <a href="https://twitter.com/mcbeeringi/"><u>McbeEringi</u></a>
     </footer>
   </div>
 </body>
