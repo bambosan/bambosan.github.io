@@ -7,47 +7,20 @@
   <meta name="description" content="main page of bambosan site">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8231611512488101" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/1bdb927010.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
   <style>
     *{
       --fgc: #dfdfdf;
       --anc: #dfdfdf;
       --aac: red;
-      --bgc: linear-gradient(rgb(18, 28, 53), rgb(61, 69, 104));
+      --bgc: black;
       --acc: #22222294;
       --hrc: #9a92aa;
       margin: 0;
       padding: 0
     }
-    @keyframes anim1{
-      from{
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to{
-        opacity: 1;
-        transform: translateY(0px);
-      }
-    }
-    @keyframes anim2{
-      from{
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to{
-        opacity: 1;
-        transform: translateX(0px);
-      }
-    }
-    @keyframes anim3{
-      from{
-        width: 0;
-      }
-      to{
-        width: 100%;
-      }
-    }
     body{
-      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-family:'Open Sans';
       color: var(--fgc);
       -webkit-tap-highlight-color: transparent
     }
@@ -56,42 +29,29 @@
       text-decoration: none;
       transition: all 0.3s
     }
-    hr{
-      height: 1px;
-      background-color: var(--hrc);
-      border: none;
-      animation-name: anim3;
-      animation-duration: 1s;
-    }
     a:hover{ color: var(--aac) }
     #con{
       margin: 0 auto;
       padding: 0 0 20px;
       width: 70vw
     }
-    #tith{
+    #he1{
       margin: 150px 0 30px 0;
       font-size: 2.6em;
       line-height: 20px;
-      animation-name: anim1;
-      animation-duration: 0.5s
     }
-    #tith #abo{ font-size: 16px; line-height: 0 }
+    #he1 #abo{ font-size: 16px; line-height: 0 }
     #he2{
       margin-bottom: 5px;
       font-size: 1.8em;
-      animation-name: anim2;
-      animation-duration: 0.5s
     }
     #box{
       display: inline-block;
       max-width: 95%;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       padding: 10px;
       line-height: 25px;
-      background-color: var(--acc);
-      animation-name: anim1;
-      animation-duration: 2s
+      border: 1px solid var(--fgc) 
     }
     #box a{ font-size: 1.5em }
     #box p{ font-size: 1em }
@@ -102,8 +62,8 @@
     @media (max-width: 850px){ #con{ width: 90vw } }
     @media (max-width: 658px){
       #con{ width: 90vw }
-      #tith{ margin: 70px 0 30px 0; font-size: 2.2em }
-      #tith #abo{ font-size: 14px; line-height: 0 }
+      #he1{ margin: 70px 0 30px 0; font-size: 2.2em }
+      #he1 #abo{ font-size: 14px; line-height: 0 }
       #he2{ font-size: 1.5em }
       #box a{ font-size: 1.2em }
     }
@@ -127,51 +87,45 @@
 <body>
   <div id="bg"></div>
   <div id="con">
-    <p id="tith">Hi I'm sad/bambosan<br><span id="abo">I created some stuff on github.</span></p>
+    <header id="he1">Hi I'm sad/bambosan<br><span id="abo">I created some stuff on github.</span></header>
     <br>
-    <p id="he2">Active Projects</p>
+    <header id="he2">Projects</header>
     <div id="box">
       <a href="https://bambosan.github.io/Bicubic-Shaders-BE/" target="_blank">Bicubic Shader BE (BSBE)</a>
-      <p>A shader/Renderdragon materials for MCBE</p>
+      <p>A Shaders (RenderDragon Materials) for MCBE</p>
     </div>
     <div id="box">
       <a href="https://bambosan.github.io/BSBE-Lite/" target="_blank">BSBE Lite</a>
-      <p>A shader/Renderdragon materials for MCBE</p>
+      <p>A Shaders (RenderDragon Materials) for MCBE</p>
     </div>
     <div id="box">
       <a href="https://bambosan.github.io/Vine-Shaders-BE/" target="_blank">Vine Shader BE</a>
-      <p>A shader for Minecraft: Bedrock Edition</p>
+      <p>A Shaders (RenderDragon Materials) for MCBE</p>
     </div>
-    <br>
-    <br>
-    <p id="he2">Archived Projects</p>
     <div id="box">
       <a href="https://github.com/bambosan/Water-Only-Shaders" target="_blank">Water Only Shader</a>
-      <p>A shader for Minecraft: Java Edition</p>
+      <p>A Optifine and Iris Shaders for MCJE</p>
     </div>
     <div id="box">
       <a href="https://github.com/bambosan/Nori-Shaders-BE" target="_blank">Nori Shader BE</a>
-      <p>A shader for Minecraft: Bedrock Edition</p>
+      <p>A Shaders for MCBE<br><b>this project may be discontinued</b></p>
     </div>
     <div id="box">
       <a href="https://github.com/bambosan/Mirai-Shaders-BE" target="_blank">Mirai Shader BE</a>
-      <p>A shader for Minecraft: Bedrock Edition</p>
+      <p>A Shaders for MCBE<br><b>this project may be discontinued</b></p>
     </div>
-    <br>
-    <br>
-    <p id="he2">Planned Projects</p>
     <div id="box">
       <a href="#">GLSL Autocompletion</a>
-      <p>Extensions for Visual Studio Code<br>this project is planned !</p>
+      <p>Extensions for Visual Studio Code<br><b>this project is planned</b></p>
     </div>
     <div id="box">
       <a href="#">Nani Desu</a>
-      <p>A website that contains updated anime information<br>this project is planned !</p>
+      <p>Website That Contains Updated Anime Information<br><b>this project is planned</b></p>
     </div>
     <br>
     <br>
     <br>
-    <p id="he2">See My Activity on</p>
+    <header id="he2">See My Activity on</header>
     <div id="box">
       <a href="https://github.com/bambosan" target="_blank"><i class="fab fa-github"></i> Github</a>
       <br>
