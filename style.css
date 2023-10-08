@@ -1,0 +1,243 @@
+:root {
+    font-family: "Jost";
+    font-size: calc(0.8em + 1vw);
+    color: white;
+    background-color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto"
+}
+
+svg {
+    fill: white
+}
+
+svg:hover {
+    fill: red
+}
+
+a {
+    font-family: "Jost";
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red
+}
+
+.con1 {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.con2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.con2w {
+    width: 100%;
+}
+
+.backc {
+    background-position: center;
+    background-size: cover;
+}
+
+.btn {
+    display: inline-block;
+    border: 2px solid white;
+    padding: 12px;
+}
+
+.btn:hover {
+    color: red;
+    border: 2px solid red
+}
+
+@media (min-width: 900px) {
+    .con1 {
+        width: 80%;
+    }
+    .con2w {
+        width: auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .con1 {
+        width: 70%;
+    }
+}
+
+.nm {
+    margin: 0
+}
+
+.nmt {
+    margin-top: 0
+}
+
+.nmb {
+    margin-bottom: 0
+}
+
+.nml {
+    margin-left: 0
+}
+
+.nmr {
+    margin-right: 0
+}
+
+.np {
+    padding: 0
+}
+
+.npt {
+    padding-top: 0
+}
+
+.npb {
+    padding-bottom: 0
+}
+
+.npl {
+    padding-left: 0
+}
+
+.npr {
+    padding-right: 0
+}
+
+.p12 {
+    padding: 12px
+}
+
+.pt12 {
+    padding-top: 12px
+}
+
+.pb12 {
+    padding-bottom: 12px
+}
+
+.pl12 {
+    padding-left: 12px
+}
+
+.pr12 {
+    padding-right: 12px
+}
+
+.p16 {
+    padding: 16px
+}
+
+.pt16 {
+    padding-top: 16px
+}
+
+.pb16 {
+    padding-bottom: 16px
+}
+
+.pl16 {
+    padding-left: 16px
+}
+
+.pr16 {
+    padding-right: 16px
+}
+
+.p24 {
+    padding: 24px
+}
+
+.pt24 {
+    padding-top: 24px
+}
+
+.pb24 {
+    padding-bottom: 24px
+}
+
+.pl24 {
+    padding-left: 24px
+}
+
+.pr24 {
+    padding-right: 24px
+}
+
+.m12 {
+    margin: 12px
+}
+
+.mt12 {
+    margin-top: 12px
+}
+
+.mb12 {
+    margin-bottom: 12px
+}
+
+.ml12 {
+    margin-left: 12px
+}
+
+.mr12 {
+    margin-right: 12px
+}
+
+.m16 {
+    margin: 16px
+}
+
+.mt16 {
+    margin-top: 16px
+}
+
+.mb16 {
+    margin-bottom: 16px
+}
+
+.ml16 {
+    margin-left: 16px
+}
+
+.mr16 {
+    margin-right: 16px
+}
+
+.m24 {
+    margin: 24px
+}
+
+.mt24 {
+    margin-top: 24px
+}
+
+.mb24 {
+    margin-bottom: 24px
+}
+
+.ml24 {
+    margin-left: 24px
+}
+
+.mr24 {
+    margin-right: 24px
+}
