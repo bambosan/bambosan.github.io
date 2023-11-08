@@ -44,7 +44,7 @@ a:hover {
 }
 
 .con2 {
-    display: flex;
+    display: inherit;
     flex-wrap: wrap;
     flex-direction: row;
 }
@@ -74,13 +74,16 @@ a:hover {
         width: 80%;
     }
     .con2w {
-        width: auto;
+        max-width: 40%;
     }
 }
 
 @media (min-width: 1200px) {
     .con1 {
         width: 70%;
+    }
+    .con2w {
+        max-width: 45%;
     }
 }
 
