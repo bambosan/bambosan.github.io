@@ -44,12 +44,8 @@ a:hover {
 }
 
 .con2 {
-    display: inherit;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.con2w {
+    display: inline-block;
+    vertical-align: top;
     width: 100%;
 }
 
@@ -69,22 +65,34 @@ a:hover {
     border: 2px solid red
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
     .con1 {
         width: 80%;
     }
-    .con2w {
-        max-width: 43%;
+}
+
+@media (min-width: 900px) {
+    .con1 {
+        width: 70%;
     }
 }
 
 @media (min-width: 1200px) {
-    .con1 {
-        width: 70%;
-    }
-    .con2w {
+    .con2 {
         max-width: 45%;
     }
+}
+
+.st6 {
+    text-shadow: 0 0 6px black;
+}
+
+.st12 {
+    text-shadow: 0 0 12px black;
+}
+
+.st18 {
+    text-shadow: 0 0 18px black;
 }
 
 .nm {
