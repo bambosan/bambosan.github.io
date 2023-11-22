@@ -57,6 +57,7 @@ a:hover {
 .btn {
     display: inline-block;
     border: 2px solid white;
+    border-radius: 12px;
     padding: 12px;
 }
 
@@ -79,7 +80,7 @@ a:hover {
 
 @media (min-width: 1200px) {
     .con2 {
-        max-width: 45%;
+        max-width: 49%;
     }
 }
 
