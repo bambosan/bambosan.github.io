@@ -32,6 +32,14 @@ a:hover {
     color: red
 }
 
+dt {
+  font-weight: bold;
+}
+
+dd {
+    margin-bottom: 1em;
+}
+
 .jt { text-align: justify }
 
 .con1 {
