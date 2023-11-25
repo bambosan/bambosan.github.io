@@ -37,12 +37,12 @@
         <li>Lightmap based shadow</li>
       </ul>
       <h3>Latest Version: 1.6</h3>
-      <a class="m12 btn" href="https://github.com/bambosan/BSBE-Lite/releases/download/1.6/BSBE-Lite-1.6-RD-Windows.mcpack">Download for Windows</a>
-      <a class="m12 btn" href="https://github.com/bambosan/BSBE-Lite/releases/download/1.6/BSBE-Lite-1.6-HAL-RD-Android.mcpack">Download for Android</a>
+      <a class="m12 btn" href="https://github.com/bambosan/BSBE-Lite/releases/download/1.6/BSBE-Lite-1.6-RD-Windows.mcpack" onclick="odp(this)">Download for Windows</a>
+      <a class="m12 btn" href="https://github.com/bambosan/BSBE-Lite/releases/download/1.6/BSBE-Lite-1.6-HAL-RD-Android.mcpack" onclick="odp(this)">Download for Android</a>
       <p>
         <a href="./version-list/"><u style="color: aqua;">See version list and changelog</u></a>
         <br>
-        Released under the MIT License, see the <a href=""><u style="color: aqua;">Source code</u></a>
+        Released under the MIT License, see the <a href="https://github.com/bambosan/BSBE-Lite"><u style="color: aqua;">Source code</u></a>
         <br>
         <b style="color: yellow" >Not allowed to re-upload the files or re-link this site as monetized URL or something like that!</b>
       </p>
@@ -117,6 +117,9 @@
         </span>
       </p>
     </footer>
+    <script>
+      function odp(elm){ elm.href = `../download/?durl=${btoa(elm.href)}` }
+    </script>
   </div>
 </body>
 

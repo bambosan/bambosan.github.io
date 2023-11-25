@@ -39,8 +39,8 @@
         <li>Underwater caustic</li>
       </ul>
       <h3>Latest Version: 3.4</h3>
-      <a class="m12 btn" href="https://github.com/bambosan/Bicubic-Shaders-BE/releases/download/3.4/BSBE-3.4-RD-Windows.mcpack">Download for Windows</a>
-      <a class="m12 btn" href="https://github.com/bambosan/Bicubic-Shaders-BE/releases/download/3.4/BSBE-3.4-RD-Android.mcpack">Download for Android</a>
+      <a class="m12 btn" href="https://github.com/bambosan/Bicubic-Shaders-BE/releases/download/3.4/BSBE-3.4-RD-Windows.mcpack" onclick="odp(this)">Download for Windows</a>
+      <a class="m12 btn" href="https://github.com/bambosan/Bicubic-Shaders-BE/releases/download/3.4/BSBE-3.4-RD-Android.mcpack" onclick="odp(this)">Download for Android</a>
       <p>
         <a href="./version-list/"><u style="color: aqua;">See version list and changelog</u></a>
         <br>
@@ -128,6 +128,9 @@
         </span>
       </p>
     </footer>
+    <script>
+      function odp(elm){ elm.href = `../download/?durl=${btoa(elm.href)}` }
+    </script>
   </div>
 </body>
 

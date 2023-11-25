@@ -36,7 +36,7 @@
         <li>Screen-Space Godrays</li>
       </ul>
       <h3>Latest Version: 1.1.0 Beta</h3>
-      <a class="btn" href="https://github.com/bambosan/BSBE-Deferred/releases/download/1.1.0-beta/BSBE-Deferred-Beta-1.1.0.mcpack">Download for Windows</a>
+      <a class="btn" href="https://github.com/bambosan/BSBE-Deferred/releases/download/1.1.0-beta/BSBE-Deferred-Beta-1.1.0.mcpack" onclick="odp(this)">Download for Windows</a>
       <p>
         <a href="./version-list/"><u style="color: aqua;">See version list and changelog</u></a>
         <br>
@@ -107,6 +107,9 @@
         </span>
       </p>
     </footer>
+    <script>
+      function odp(elm){ elm.href = `../download/?durl=${btoa(elm.href)}` }
+    </script>
   </div>
 </body>
 

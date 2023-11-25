@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Download</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="sad, bambosan">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <div class="con1">
+    <div>
+      <h2 class="nm" id="cd"></h2>
+      <a style="margin: 0; visibility:hidden"><u>Click here if download not started</u></a>
+    </div>
+    <script>
+      let timer;
+      let cdval = 10;
+        timer = setInterval(_=>{
+          if(cdval <= 0){
+            clearInterval(timer);
+            cd.innerHTML = "Downloading...";
+            const urls = atob(new URLSearchParams(window.location.search).get('durl'));
+            window.open(urls, '_self', 'noopener,noreferrer');
+            document.querySelector('a').style.visibility = 'visible';
+          } else {
+            cd.innerHTML = `Starting download in ${cdval} seconds...`;
+          }
+          cdval--;
+        }, 1000);
+    </script>
+  </div>
+</body>
+
+</html>

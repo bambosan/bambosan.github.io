@@ -28,14 +28,14 @@
         <li>New technique of shadowmap filtering</li>
         <li>Fix the entire screen just showing black color in Nether and EndWorld</li>
       </ul>
-      <a class="mt12 mr12 mb24 btn" href="https://github.com/bambosan/BSBE-Deferred/releases/download/1.1.0-beta/BSBE-Deferred-Beta-1.1.0.mcpack">Download for Windows</a>
+      <a class="mt12 mr12 mb24 btn" href="https://github.com/bambosan/BSBE-Deferred/releases/download/1.1.0-beta/BSBE-Deferred-Beta-1.1.0.mcpack" onclick="odp(this)">Download for Windows</a>
       <hr>
       <h2>Version 1.0.0 Test</h2>
       <h3>Changelog</h3>
       <ul>
         <li>Initial release!</li>
       </ul>
-      <a class="mt12 mr12 mb24 btn" href="https://github.com/bambosan/BSBE-Deferred/releases/download/1.0.0-test/BSBE-Deferred-Test-1.0.0.mcpack">Download for Windows</a>
+      <a class="mt12 mr12 mb24 btn" href="https://github.com/bambosan/BSBE-Deferred/releases/download/1.0.0-test/BSBE-Deferred-Test-1.0.0.mcpack" onclick="odp(this)">Download for Windows</a>
     </div>
 
     <footer class="p12">
@@ -48,6 +48,9 @@
         </span>
       </p>
     </footer>
+    <script>
+      function odp(elm){ elm.href = `../download/?durl=${btoa(elm.href)}` }
+    </script>
   </div>
 </body>
 
