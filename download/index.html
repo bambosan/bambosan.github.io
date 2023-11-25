@@ -27,6 +27,7 @@
             const urls = atob(new URLSearchParams(window.location.search).get('durl'));
             window.open(urls, '_self', 'noopener,noreferrer');
             document.querySelector('a').style.visibility = 'visible';
+            document.querySelector('a').href = urls;
           } else {
             cd.innerHTML = `Starting download in ${cdval} seconds...`;
           }
