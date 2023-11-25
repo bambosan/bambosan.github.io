@@ -13,26 +13,38 @@
 
 <body>
   <div class="con1">
+    <!-- horadunit -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993"
+      data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
     <div>
       <h2 class="nm" id="cd"></h2>
       <a style="margin: 0; visibility:hidden"><u>Click here if download not started</u></a>
     </div>
+    <!-- horadunit -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993"
+      data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
     <script>
       let timer;
       let cdval = 10;
-        timer = setInterval(_=>{
-          if(cdval <= 0){
-            clearInterval(timer);
-            cd.innerHTML = "Downloading...";
-            const urls = atob(new URLSearchParams(window.location.search).get('durl'));
-            window.open(urls, '_self', 'noopener,noreferrer');
-            document.querySelector('a').style.visibility = 'visible';
-            document.querySelector('a').href = urls;
-          } else {
-            cd.innerHTML = `Starting download in ${cdval} seconds...`;
-          }
-          cdval--;
-        }, 1000);
+      timer = setInterval(_ => {
+        if (cdval <= 0) {
+          clearInterval(timer);
+          cd.innerHTML = "Downloading...";
+          const urls = atob(new URLSearchParams(window.location.search).get('durl'));
+          window.open(urls, '_self', 'noopener,noreferrer');
+          document.querySelector('a').style.visibility = 'visible';
+          document.querySelector('a').href = urls;
+        } else {
+          cd.innerHTML = `Starting download in ${cdval} seconds...`;
+        }
+        cdval--;
+      }, 1000);
     </script>
   </div>
 </body>
