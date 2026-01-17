@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mirai</title>
+    <meta name="description" content="A resoucepack for Minecraft: Bedrock Edition that makes the visuals look realistic-vibrant. Built on heavily modified vibrant visual pipeline with features like atmospheric lighting and fog." />
+    <meta name="keywords" content="mirai, bambosan, sad, vibrant visual, mcbe shader, mcpe shader, mirai shader, minecraft bedrock shader, renderdragon shader, minecraft shader pack, realistic minecraft shader" />
+    <meta name="author" content="bambosan" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bambosan.github.io/mirai" />
+    <meta property="og:title" content="Mirai" />
+    <meta property="og:description" content="A resoucepack for Minecraft: Bedrock Edition that makes the visuals look realistic-vibrant. Built on heavily modified vibrant visual pipeline with features like atmospheric lighting and fog." />
+    <meta property="og:image" content="https://bambosan.github.io/mirai/ss4.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://bambosan.github.io/mirai" />
+    <meta property="twitter:title" content="Mirai - Realistic Vibrant Shader for Minecraft Bedrock Edition" />
+    <meta property="twitter:description" content="A resoucepack for Minecraft: Bedrock Edition that makes the visuals look realistic-vibrant. Built on heavily modified vibrant visual pipeline with features like atmospheric lighting and fog." />
+    <meta property="twitter:image" content="https://bambosan.github.io/mirai/ss4.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+    <style>
+      :root {
+        --bg-main: #0e0f13;
+        --bg-soft: #151823;
+        --accent: #6ce1b6;
+        --text-main: #e7e9ee;
+        --text-soft: #b6b9c3;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        background: var(--bg-main);
+        color: var(--text-main);
+        line-height: 1.7;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .hero {
+        min-height: calc(100vh - 4.5rem);
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("ss4.png") center / cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+      }
+      .hero h1 {
+        font-family: "Calligraffitti";
+        font-size: 7rem;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1em;
+        color: #ffffff;
+      }
+      .nav {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        background: var(--bg-soft);
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .nav button {
+        background: transparent;
+        border: 1px solid transparent;
+        color: var(--text-soft);
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .nav button:hover {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      section {
+        padding: 4rem 10%;
+      }
+      section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+      }
+      section p {
+        color: var(--text-soft);
+        margin-bottom: 1.2rem;
+      }
+      .screenshots {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      .shot {
+        background: var(--bg-soft);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .shot img {
+        width: 100%;
+        display: block;
+      }
+      .shot p {
+        padding: 1rem;
+        margin-bottom: 0;
+        font-size: 0.9rem;
+        color: var(--text-soft);
+      }
+      .footer-note {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.85rem;
+        color: #7d8190;
+      }
+      .accordion-btn {
+        background: var(--bg-soft);
+        border: 1px solid var(--accent);
+        color: var(--text-main);
+        padding: 1rem 1.5rem;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 5px;
+        margin-bottom: 0.5rem;
+        transition: 0.2s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .accordion-btn:hover {
+        background: rgba(108, 225, 182, 0.1);
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        margin-bottom: 1rem;
+      }
+      .accordion-content.active {
+        max-height: 1000px;
+      }
+      .warning-box {
+        background: rgba(255, 193, 7, 0.1);
+        border-left: 4px solid #ffc107;
+        padding: 1rem;
+        margin-top: 1.5rem;
+        border-radius: 5px;
+        color: var(--text-soft);
+      }
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 5rem;
+        }
+        section {
+          padding: 3rem 7%;
+        }
+        .nav {
+          overflow-x: auto;
+          justify-content: flex-start;
+          gap: 0.5rem;
+          padding: 1rem 0.5rem;
+          -webkit-overflow-scrolling: touch;
+        }
+        .nav button {
+          white-space: nowrap;
+          flex-shrink: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Mirai</h1>
+    </div>
+    <div class="nav">
+      <button onclick="scrollto('about')">About</button>
+      <button onclick="scrollto('download')">Download</button>
+      <button onclick="scrollto('changelog')">Changelog</button>
+      <button onclick="scrollto('faq')">FAQ</button>
+      <button onclick="scrollto('contact')">Contact</button>
+    </div>
+    <section id="about">
+      <h2>About Mirai</h2>
+      <p>
+        Technically, Mirai is a heavily modified vibrant visual pipeline for
+        Minecraft: Bedrock Edition. A total of 38 materials have been rebuilt
+        and adjusted, where material itself is a file used by the
+        <a
+          href="https://minecraft.wiki/w/RenderDragon"
+          target="_blank"
+          style="color: var(--accent); text-decoration: underline"
+          >RenderDragon</a>
+        engine, containing configurations for the rendering pipeline and
+        shaders.
+      </p>
+      <p>
+        Mirai is a reboot of
+        <a
+          href="https://github.com/bambosan/Mirai-Shader"
+          target="_blank"
+          style="color: var(--accent); text-decoration: underline"
+          >my old shader</a>
+        project that once shared the same name. The previous Mirai focused on a
+        different visual direction, this version is a complete reimagination.
+        Instead of continuing the old style, Mirai is now built around a
+        realistic–vibrant look, aiming to keep Minecraft colorful while adding
+        atmospheric feels, and cinematic lighting.
+      </p>
+      <p>
+        Compared to the default vibrant visuals, Mirai introduces features such
+        as projected caustics, a semi-physically based atmosphere model,
+        atmosphere based volumetric fog, AgX tonemapping, and lightweight 2D
+        wisp clouds.
+      </p>
+      <div class="screenshots">
+        <div class="shot">
+          <img src="ss1.png" alt="Underwater scene" />
+          <p>
+            Underwater lighting test showcasing projected caustics and subtle
+            light falloff
+          </p>
+        </div>
+        <div class="shot">
+          <img src="ss2.png" alt="Village daylight" />
+          <p>A village scene under daylight</p>
+        </div>
+        <div class="shot">
+          <img src="ss3.png" alt="Aerial river view" />
+          <p>Aerial view of terrain and river</p>
+        </div>
+        <div class="shot">
+          <img src="ss4.png" alt="Sunset hills" />
+          <p>Sunset lighting over rolling hills</p>
+        </div>
+        <div class="shot">
+          <img src="ss5.png" alt="Open plains" />
+          <p>Open plains with long shadows and clean sky gradients</p>
+        </div>
+        <div class="shot">
+          <img src="ss6.png" alt="Village at night" />
+          <p>Night scene in a village with moonlight</p>
+        </div>
+        <div class="shot">
+          <img src="ss7.png" alt="Nighttime landscape" />
+          <p>A quiet night view over hills and river</p>
+        </div>
+        <div class="shot">
+          <img src="ss8.png" alt="Nether dimension" />
+          <p>Inside the Nether, where lava glow and red fog dominate</p>
+        </div>
+        <div class="shot">
+          <img src="ss9.png" alt="The End" />
+          <p>The End dimension with its void-like sky and obsidian pillars</p>
+        </div>
+      </div>
+    </section>
+    <section id="download">
+      <h2>Download</h2>
+      <p style="margin-bottom: 1.5rem">
+        For Minecraft: Bedrock Edition 1.21.132 release
+      </p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem">
+        <a
+          href="https://github.com/bambosan/mirai/releases/download/1.0.0/mirai.mcpack"
+          style="
+            background: var(--accent);
+            color: var(--bg-main);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+          "
+          >Download for Android</a>
+        <button
+          disabled
+          style="
+            background: var(--bg-soft);
+            color: var(--text-soft);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+            border: 1px solid var(--text-soft);
+            cursor: not-allowed;
+            opacity: 0.5;
+          ">
+          Download for iOS <small>(coming soon)</small>
+        </button>
+        <button
+          disabled
+          style="
+            background: var(--bg-soft);
+            color: var(--text-soft);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+            border: 1px solid var(--text-soft);
+            cursor: not-allowed;
+            opacity: 0.5;
+          ">
+          Download for Windows <small>(coming soon)</small>
+        </button>
+      </div>
+      <p style="margin-bottom: 2rem">
+        View source on
+        <a
+          href="https://github.com/bambosan/mirai"
+          target="_blank"
+          style="color: var(--accent); text-decoration: underline"
+          >GitHub</a>
+      </p>
+      <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #ffffff">
+        Support Me
+      </h3>
+      <p>Download with wait 10 seconds</p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem">
+        <a
+          href="https://github.com/bambosan/mirai/releases/download/1.0.0/mirai.mcpack"
+          onclick="odp(this)"
+          style="
+            background: var(--bg-soft);
+            border: 1px solid var(--accent);
+            color: var(--text-main);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;"
+          >Download for Android</a>
+        <button
+          disabled
+          style="
+            background: var(--bg-soft);
+            color: var(--text-soft);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+            border: 1px solid var(--text-soft);
+            cursor: not-allowed;
+            opacity: 0.5;
+          ">
+          Download for iOS <small>(coming soon)</small>
+        </button>
+        <button
+          disabled
+          style="
+            background: var(--bg-soft);
+            color: var(--text-soft);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+            border: 1px solid var(--text-soft);
+            cursor: not-allowed;
+            opacity: 0.5;
+          ">
+          Download for Windows <small>(coming soon)</small>
+        </button>
+      </div>
+      <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #ffffff">
+        How to Install
+      </h3>
+      <button class="accordion-btn" onclick="toggleacc('android')">
+        <span>Android</span>
+        <span id="android-icon">▼</span>
+      </button>
+      <div class="accordion-content" id="android-content">
+        <div style="padding: 1rem; background: var(--bg-soft); border-radius: 5px">
+          <p style="margin-bottom: 1rem">
+            <strong>Using MB Loader app:</strong>
+          </p>
+          <ol
+            style="
+              color: var(--text-soft);
+              margin-bottom: 1.5rem;
+              margin-left: 1.5rem;
+            ">
+            <li style="margin-bottom: 0.5rem">
+              Download MB Loader from Play Store:
+              <a
+                href="https://play.google.com/store/apps/details?id=io.bambosan.mbloader&pcampaignid=web_share"
+                target="_blank"
+                style="color: var(--accent); text-decoration: underline"
+                >here</a>
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              Open the app → go to <strong>Settings</strong> →
+              <strong>Import addon</strong> → select the downloaded mirai.mcpack
+              file → back to <strong>Home</strong> →
+              <strong>Load with MBL2</strong>
+            </li>
+            <li style="margin-bottom: 0.5rem">Activate the resource pack</li>
+          </ol>
+          <p style="margin-bottom: 1rem">
+            <strong>Using Levi Launcher app:</strong>
+          </p>
+          <ol style="color: var(--text-soft); margin-left: 1.5rem">
+            <li style="margin-bottom: 0.5rem">
+              Download the app here:
+              <a
+                href="https://github.com/LiteLDev/LeviLaunchroid/releases/tag/v1.2.12"
+                target="_blank"
+                style="color: var(--accent); text-decoration: underline"
+                >Levi Launcher</a>
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              Download the mod here:
+              <a
+                href="https://github.com/mcbegamerxx954/mtbinloader2/releases/tag/v0.1.12-newbxfix"
+                target="_blank"
+                style="color: var(--accent); text-decoration: underline"
+                >mtbinloader2</a>
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              Open the app → <strong>Manage Mods</strong> →
+              <strong>Add Mod</strong> → select the mod file (.so) downloaded in
+              step 2
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              Go to <strong>Content Management</strong> →
+              <strong>Resource Packs</strong> →
+              <strong>Import Resource Pack</strong> → select the downloaded
+              mirai.mcpack file
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              Launch → activate the resource pack
+            </li>
+          </ol>
+          <div class="warning-box">
+            ⚠️&nbsp;&nbsp;&nbsp;<strong>If the pack is already activated but nothing affected, please restart Minecraft.</strong>
+          </div>
+        </div>
+      </div>
+      <button class="accordion-btn" onclick="toggleacc('windows')">
+        <span>Windows</span>
+        <span id="windows-icon">▼</span>
+      </button>
+      <div class="accordion-content" id="windows-content">
+        <div style="padding: 1rem; background: var(--bg-soft); border-radius: 5px">
+          <p style="color: var(--text-soft)">Coming soon...</p>
+        </div>
+      </div>
+      <button class="accordion-btn" onclick="toggleacc('ios')">
+        <span>iOS</span>
+        <span id="ios-icon">▼</span>
+      </button>
+      <div class="accordion-content" id="ios-content">
+        <div style="padding: 1rem; background: var(--bg-soft); border-radius: 5px">
+          <p style="color: var(--text-soft)">Coming soon...</p>
+        </div>
+      </div>
+    </section>
+    <section id="changelog">
+      <h2>Changelog</h2>
+      <ul
+        style="
+          color: var(--text-soft);
+          margin-bottom: 1.2rem;
+          list-style-position: inside;
+        ">
+        <li><strong>1.0.0</strong> First version!</li>
+      </ul>
+      <h3
+        style="
+          font-size: 1.5rem;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          color: #ffffff;
+        ">
+        Known Issues
+      </h3>
+      <ul
+        style="
+          color: var(--text-soft);
+          margin-bottom: 1.2rem;
+          list-style-position: inside;
+        ">
+        <li style="margin-bottom: 0.5rem">NaN issues on some Android devices</li>
+        <li style="margin-bottom: 0.5rem">Maps are invisible when held</li>
+        <li style="margin-bottom: 0.5rem">Unstable beam effects after defeating the Ender Dragon</li>
+      </ul>
+    </section>
+    <section id="faq">
+      <h2>FAQ</h2>
+      <p>
+        <strong>Is Mirai performance-friendly?</strong><br />
+        It targets mid to high-end devices
+      </p>
+      <p>
+        <strong>Rain doesn't affect the visuals?</strong><br />
+        Rain contribution to lighting and atmosphere is not yet implemented
+      </p>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Found a bug? Have a suggestion? Let me know via
+        <a
+          href="https://github.com/bambosan/mirai"
+          style="color: var(--accent); text-decoration: underline"
+          >GitHub</a>
+        or
+        <a
+          href="mailto:bambosan888@gmail.com"
+          style="color: var(--accent); text-decoration: underline"
+          >email</a>.
+      </p>
+    </section>
+    <div class="footer-note">
+      <p style="margin-bottom: 1rem">&copy; sad/bambosan 2026 ~</p>
+      <p style="margin-bottom: 0.5rem; font-size: 0.8rem">
+        RenderDragon Materials is assets of Minecraft: Bedrock Edition and
+        Minecraft is trademark of Mojang. This site is not affiliated with
+        Mojang or Microsoft.
+      </p>
+      <p style="font-size: 0.8rem">
+        Thanks to
+        <a
+          href="https://github.com/veka0"
+          target="_blank"
+          style="color: var(--accent); text-decoration: underline"
+          >veka0</a>
+        for making such a
+        <a
+          href="https://veka0.github.io/lazurite/"
+          target="_blank"
+          style="color: var(--accent); text-decoration: underline"
+          >great tool</a>
+        and to everyone who has helped me
+      </p>
+    </div>
+    <script>
+      function scrollto(id) { document.getElementById(id).scrollIntoView({ behavior: "smooth" }); }
+      function toggleacc(p) {
+        const con = document.getElementById(p + "-content");
+        const icon = document.getElementById(p + "-icon");
+        if (con.classList.contains("active")) {
+          con.classList.remove("active");
+          icon.textContent = "▼";
+        } else {
+          document.querySelectorAll(".accordion-content").forEach((el) => { el.classList.remove("active"); });
+          document.querySelectorAll('[id$="-icon"]').forEach((el) => { el.textContent = "▼"; });
+          con.classList.add("active");
+          icon.textContent = "▲";
+        }
+      }
+      function odp(elm) { elm.href = `../download/?durl=${btoa(elm.href)}`; }
+    </script>
+  </body>
+</html>
