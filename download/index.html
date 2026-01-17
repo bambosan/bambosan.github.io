@@ -1,53 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <title>Download</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="sad, bambosan">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost">
-  <link rel="stylesheet" href="../style.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8231611512488101" crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <div class="con1">
-    <div class="m12">
-      <!-- horadunit -->
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993"
-      data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-    <div class="m12">
-      <h2 class="nm" id="cd"></h2>
-      <a style="margin: 0; visibility:hidden"><u>Click here if download not started</u></a>
-    </div>
-    <div class="m12">
-      <!-- horadunit -->
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993"
-      data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-  </div>
-  <script>
-    const qurl = new URLSearchParams(window.location.search);
-    let t, i = 10;
-    t = setInterval(_=> {
-      if(i <= 0){
-        clearInterval(t);
-        cd.innerHTML = "Downloading...";
-        const urls = atob(qurl.get('durl'));
-        window.open(urls, '_self', 'noopener,noreferrer');
-        document.querySelector('a').style.visibility = 'visible';
-        document.querySelector('a').href = urls;
-      } else {
-        cd.innerHTML = qurl.has('durl') ? `Starting download in ${i} seconds...` : 'What do you want?';
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8231611512488101" crossorigin="anonymous"></script>
+    <style>
+      :root {
+        --bg-main: #0e0f13;
+        --bg-soft: #151823;
+        --accent: #6ce1b6;
+        --text-main: #e7e9ee;
+        --text-soft: #b6b9c3;
       }
-      i--;
-    }, 1000);
-  </script>
-</body>
-
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        background: var(--bg-main);
+        color: var(--text-main);
+        line-height: 1.7;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .container {
+        max-width: 800px;
+        width: 100%;
+        text-align: center;
+      }
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--accent);
+      }
+      .download-link {
+        display: inline-block;
+        margin-top: 1rem;
+        color: var(--accent);
+        text-decoration: underline;
+        visibility: hidden;
+      }
+      .ad-space {
+        background: var(--bg-soft);
+        border: 1px dashed var(--text-soft);
+        border-radius: 10px;
+        padding: 2rem;
+        margin: 2rem 0;
+        color: var(--text-soft);
+        font-size: 0.9rem;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="ad-space">
+        <!-- horadunit -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <div>
+        <h3 id="cd"></h3>
+        <a class="download-link" id="dl">
+          <u>Click here if download not started</u>
+        </a>
+      </div>
+      <div class="ad-space">
+        <!-- horadunit -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+    <script>
+      const qurl = new URLSearchParams(window.location.search);
+      if (!qurl.has('durl')) {
+        cd.innerHTML = 'What do you want?';
+      } else {
+        let t, i = 10;
+        t = setInterval(() => {
+          if (i <= 0) {
+            clearInterval(t);
+            cd.innerHTML = "Downloading...";
+            const urls = atob(qurl.get('durl'));
+            window.open(urls, '_self', 'noopener,noreferrer');
+            dl.style.visibility = 'visible';
+            dl.href = urls;
+          } else {
+            cd.innerHTML = `Starting download in ${i} seconds...`;
+          }
+          i--;
+        }, 1000);
+      }
+    </script>
+  </body>
 </html>
