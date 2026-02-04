@@ -36,8 +36,6 @@
         --text-soft: #a8abb8;
         --text-muted: #6b6e7d;
         --border: #2a2e3f;
-        --gradient-1: linear-gradient(to right, #667eea 0%, #764ba2 100%);
-        --gradient-2: linear-gradient(to right, #6ce1b6 0%, #4facfe 100%);
       }
 
       * {
@@ -84,7 +82,7 @@
       .hero {
         position: relative;
         min-height: 100vh;
-        background: linear-gradient(rgba(10, 11, 14, 0.7), rgba(10, 11, 14, 0.85)), url("ss4.png") center / cover no-repeat;
+        background: linear-gradient(rgba(10, 11, 14, 0.6), rgba(10, 11, 14, 0.6)), url("ss4.png") center / cover no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -123,7 +121,7 @@
       }
 
       .btn-primary {
-        background: var(--gradient-2);
+        background: var(--accent);
         color: var(--bg-main);
         padding: 1rem 2.5rem;
         font-weight: 600;
@@ -162,7 +160,7 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        background: rgba(18, 20, 26, 0.75);
+        background: rgba(18, 20, 26, 0.5);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border-bottom: 1px solid var(--border);
@@ -224,7 +222,7 @@
         left: 0;
         width: 0;
         height: 3px;
-        background: var(--gradient-2);
+        background: var(--accent);
         transition: width 0.3s ease;
       }
 
@@ -274,7 +272,7 @@
         left: 0;
         width: 60px;
         height: 4px;
-        background: var(--gradient-2);
+        background: var(--accent);
       }
 
       .section-intro {
