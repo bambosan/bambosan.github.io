@@ -28,8 +28,8 @@
         line-height: 1.7;
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
         padding: 2rem;
       }
       .container {
@@ -37,17 +37,19 @@
         width: 100%;
         text-align: center;
       }
+      .top-section {
+        position: sticky;
+        top: 0;
+        background: rgba(14, 15, 19, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 2rem 0;
+        z-index: 10;
+        border-bottom: 1px solid var(--bg-soft);
+        margin-bottom: 2rem;
+      }
       h2 {
         font-size: 2rem;
-        margin-bottom: 1.5rem;
         color: var(--accent);
-      }
-      .download-link {
-        display: inline-block;
-        margin-top: 1rem;
-        color: var(--accent);
-        text-decoration: underline;
-        visibility: hidden;
       }
       .ad-space {
         background: var(--bg-soft);
@@ -57,55 +59,111 @@
         margin: 2rem 0;
         color: var(--text-soft);
         font-size: 0.9rem;
+        min-height: 150px;
       }
-      a {
-        color: var(--accent);
+      .bottom-section {
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        display: none;
+      }
+      .download-btn {
+        display: inline-block;
+        background: var(--accent);
+        color: var(--bg-main);
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        border-radius: 8px;
         text-decoration: none;
+        transition: transform 0.2s, opacity 0.2s;
       }
-      a:hover {
-        text-decoration: underline;
+      .download-btn:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
       }
     </style>
   </head>
   <body>
+
+    <div class="container top-section">
+      <h2 id="cd">Please wait...</h2>
+    </div>
+
     <div class="container">
       <div class="ad-space">
-        <!-- horadunit -->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993"
-        data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
-      <div>
-        <h3 id="cd"></h3>
-        <a class="download-link" id="dl">
-          <u>Click here if download not started</u>
-        </a>
+      <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
       <div class="ad-space">
-        <!-- horadunit -->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993"
-        data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8231611512488101" data-ad-slot="4141086993" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
     </div>
+
+    <div class="container bottom-section" id="bottom-section">
+      <a class="download-btn" id="dl">Download Now</a>
+    </div>
+
     <script>
+      window.scrollTo(0, 0);
+
       const qurl = new URLSearchParams(window.location.search);
+      const cd = document.getElementById('cd');
+      const dl = document.getElementById('dl');
+      const bottomSection = document.getElementById('bottom-section');
+
       if (!qurl.has('durl')) {
         cd.innerHTML = 'What do you want?';
       } else {
-        let t, i = 10;
-        t = setInterval(() => {
+        let i = 10;
+        cd.innerHTML = `Please wait in ${i} seconds...`;
+        let t = setInterval(() => {
+          i--;
           if (i <= 0) {
             clearInterval(t);
-            cd.innerHTML = "Downloading...";
-            const urls = atob(qurl.get('durl'));
-            window.open(urls, '_self', 'noopener,noreferrer');
-            dl.style.visibility = 'visible';
-            dl.href = urls;
+            cd.innerHTML = "Please scroll to the bottom to download!";
+            try {
+              const urls = atob(qurl.get('durl'));
+              dl.href = urls;
+              bottomSection.style.display = 'block';
+            } catch(e) {
+              cd.innerHTML = "Error processing download link.";
+            }
           } else {
             cd.innerHTML = `Starting download in ${i} seconds...`;
           }
-          i--;
         }, 1000);
       }
     </script>
