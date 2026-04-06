@@ -716,3 +716,9 @@ button:disabled {
     margin-top: 4rem;
   }
 }
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: calc(40vh - 48px);
+  }
+}
