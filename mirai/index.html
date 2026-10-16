@@ -4,503 +4,525 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mirai</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <meta name="description" content="A vibrant visual shader for MCBE that aims for the visuals to look realistic"/>
-    <meta name="keywords" content="mirai, bambosan, sad, vibrant visual, vibrant visual shader, vv, vv shader, mcbe shader, mcpe shader, mirai shader, minecraft bedrock shader, renderdragon shader, minecraft shader pack, realistic minecraft shader"/>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <meta
+      name="description"
+      content="A vibrant visual shader for MCBE that aims for the visuals to look realistic"
+    />
+    <meta
+      name="keywords"
+      content="mirai, bambosan, sad, vibrant visual, vibrant visual shader, vv, vv shader, mcbe shader, mcpe shader, mirai shader, minecraft bedrock shader, renderdragon shader, minecraft shader pack, realistic minecraft shader"
+    />
     <meta name="author" content="bambosan" />
+    <meta name="theme-color" content="#131314" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bambosan.github.io/mirai" />
     <meta property="og:title" content="Mirai" />
-    <meta property="og:description" content="A vibrant visual shader for MCBE that aims for the visuals to look realistic" />
-    <meta property="og:image" content="https://bambosan.github.io/mirai/meta.jpg" />
+    <meta
+      property="og:description"
+      content="A vibrant visual shader for MCBE that aims for the visuals to look realistic"
+    />
+    <meta
+      property="og:image"
+      content="https://bambosan.github.io/mirai/preview.jpg"
+    />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://bambosan.github.io/mirai" />
     <meta property="twitter:title" content="Mirai" />
-    <meta property="twitter:description" content="A vibrant visual shader for MCBE that aims for the visuals to look realistic" />
-    <meta property="twitter:image" content="https://bambosan.github.io/mirai/meta.jpg" />
+    <meta
+      property="twitter:description"
+      content="A vibrant visual shader for MCBE that aims for the visuals to look realistic"
+    />
+    <meta
+      property="twitter:image"
+      content="https://bambosan.github.io/mirai/preview.jpg"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="nav">
-      <div class="nav-brand">M</div>
-
-      <button class="mobile-menu-btn" id="mobile-menu-toggle">
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </button>
-
-      <div class="nav-container" id="nav-container">
-        <button class="nav-btn active" data-target="home">Home</button>
-        <button class="nav-btn" data-target="download">Download & Install</button>
-        <button class="nav-btn" data-target="changelog">Changelog</button>
-        <button class="nav-btn" data-target="faq">FAQ</button>
-        <button class="nav-btn" data-target="gallery">Gallery</button>
-        <button class="nav-btn" data-target="contact">Contact</button>
-      </div>
-    </div>
-
     <main>
-      <section id="view-home" class="view active">
-        <div class="hero">
+      <section class="hero" id="top">
+        <img
+          class="hero-img"
+          src="ss0.png"
+          width="1600"
+          height="720"
+          alt="A cherry grove with a small village house, rendered with Mirai"
+          fetchpriority="high"
+        />
+        <div class="hero-text wrap">
           <h1>Mirai</h1>
         </div>
+      </section>
 
-        <div id="about" style="background: var(--bg-secondary)">
-          <div class="container">
-            <h2 class="section-title reveal">About</h2>
-            <p style="margin-top: 1.5rem">
-              A vibrant visual shader for MCBE that aims for the visuals to look realistic, that's it.
-            </p>
+      <section class="intro wrap">
+        <p class="lead">
+          A vibrant visual shader for Minecraft Bedrock that aims for a
+          realistic look.
+        </p>
+        <div>
+          <div class="actions">
+            <a class="btn btn-primary" href="#download">Download</a>
+            <a
+              class="btn"
+              href="https://github.com/bambosan/mirai"
+              target="_blank"
+              rel="noopener"
+              >View on GitHub</a
+            >
+          </div>
+          <p class="meta">Version 3.0.0 for MCBE 26.50 to 26.52</p>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="wrap split">
+          <h2>About</h2>
+          <div class="prose">
             <p>
-              Technically, Mirai is a heavily modified vibrant visual pipeline. A total of 52 materials have been rebuilt and adjusted, where the material itself is a file used by the
+              Mirai is a heavily modified vibrant visual pipeline. It rebuilds
+              54 materials for the
               <a
                 href="https://minecraft.wiki/w/RenderDragon"
                 target="_blank"
-                style="color: var(--accent); text-decoration: underline">Render Dragon</a> engine, containing shaders and configurations for the rendering pipeline.
+                rel="noopener"
+                >Render Dragon</a
+              >
+              engine, aiming for realism and an atmospheric feel.
             </p>
             <p>
-              Mirai is also a reboot of
+              It's also a reboot of
               <a
                 href="https://github.com/bambosan/Mirai-Shader"
                 target="_blank"
-                style="color: var(--accent); text-decoration: underline">my old shader</a> project that once shared the same name. The previous one focused on a different visual direction; this version is a complete reimagination. Instead of continuing the old style, now it's built around a realistic look and atmospheric feels.
+                rel="noopener"
+                >my earlier shader</a
+              >
+              of the same name, reimagined around a realistic look instead of
+              the old style.
             </p>
           </div>
         </div>
-
-        <div id="features">
-          <div class="container">
-            <h2 class="section-title reveal">Main Features</h2>
-            <div class="features-collage reveal">
-              <div class="feature-item feat-large">
-                <img src="volume-clouds.png" alt="Volumetric Clouds" />
-                <div class="feature-overlay">
-                  <h3>Volumetric Clouds</h3>
-                  <p>Real-time permeable volumetric clouds</p>
-                </div>
-              </div>
-              <div class="feature-item feat-wide">
-                <img src="better-reflection.png" alt="Water Reflections" />
-                <div class="feature-overlay-top">
-                  <h3>Better Reflections</h3>
-                  <p>Cleaner and has more vertical tracing screen-space reflections</p>
-                </div>
-              </div>
-              <div class="feature-item feat-tall">
-                <img src="atmospheric.png" alt="Atmosphere" />
-                <div class="feature-overlay">
-                  <h3>Atmospheric Scattering</h3>
-                  <p>Semi-physical atmosphere with aerial perspective for realistic fog and natural sky</p>
-                </div>
-              </div>
-              <div class="feature-item feat-tall">
-                <img src="projected-caustics.png" alt="Water Caustics" />
-                <div class="feature-overlay">
-                  <h3>Projected Water Caustics</h3>
-                  <p>Dynamic light patterns projected onto the seabed</p>
-                </div>
-              </div>
-              <div class="feature-item feat-wide">
-                <img src="agx-tonemap.png" alt="AgX Tonemap" />
-                <div class="feature-overlay">
-                  <h3>AgX Tonemapping</h3>
-                  <p>Handles bright lights and colors more smoothly</p>
-                </div>
-              </div>
-              <div class="feature-item feat-wide">
-                <img src="cirrus.png" alt="Cirrus Clouds" />
-                <div class="feature-overlay">
-                  <h3>Cirrus Clouds</h3>
-                  <p>High altitude planar cloud layers</p>
-                </div>
-              </div>
-              <div class="feature-item feat-wide">
-                <img src="better-snels-window.png" alt="Snell's Window" />
-                <div class="feature-overlay">
-                  <h3>Better Snell's Window</h3>
-                  <p>Now we can clearly see everything that is outside the water</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="collage">
+          <img
+            class="c-a"
+            src="ss1.png"
+            width="1600"
+            height="720"
+            loading="lazy"
+            alt="Village houses, wheat and cherry trees under a soft evening sky"
+          />
+          <img
+            class="c-b"
+            src="ss2.png"
+            width="1600"
+            height="720"
+            loading="lazy"
+            alt="Tall grass and cherry trees in a hillside grove"
+          />
+          <img
+            class="c-c"
+            src="ss3.png"
+            width="1600"
+            height="720"
+            loading="lazy"
+            alt="Autumn trees in gold and red against a blue sky"
+          />
         </div>
+      </section>
 
-        <div id="open-source" style="background: var(--bg-secondary)">
-          <div class="container">
-            <div class="open-source-section reveal">
-              <div class="oss-text">
-                <h2 class="section-title">Open Source</h2>
-                <p style="margin-top: 1rem">
-                  Mirai is built out of passion and shared freely with the community under the MIT License. Whether you want to see how the shader works under the hood or contribute to making it even better, the source code is free to explore.
-                </p>
+      <section class="section" id="features">
+        <div class="wrap split">
+          <h2>Features</h2>
+          <dl class="features">
+            <div>
+              <dt>Better reflections</dt>
+              <dd>
+                Cleaner screen-space reflections with more vertical tracing.
+              </dd>
+            </div>
+            <div>
+              <dt>Atmospheric scattering</dt>
+              <dd>A semi-physical sky for natural look.</dd>
+            </div>
+            <div>
+              <dt>Better Water caustics</dt>
+              <dd>Light patterns projected onto the seabed.</dd>
+            </div>
+            <div>
+              <dt>AgX tonemapping</dt>
+              <dd>Smoother handling of bright lights and colors.</dd>
+            </div>
+            <div>
+              <dt>Cirrus clouds</dt>
+              <dd>High-altitude planar cloud layers.</dd>
+            </div>
+            <div>
+              <dt>Better Snell's window</dt>
+              <dd>A clear view of everything above the water line.</dd>
+            </div>
+            <div>
+              <dt>Rain puddle</dt>
+              <dd>
+                Puddles that form when it rains make the surface reflective.
+              </dd>
+            </div>
+            <div>
+              <dt>Water parallax</dt>
+              <dd>
+                An effect that makes the waves on the water's surface appear
+                deeper.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section" id="download">
+        <div class="wrap split">
+          <h2>Download</h2>
+          <div class="prose">
+            <p>
+              <strong>Version 3.0.0</strong> for MCBE: 26.50, 26.51, and 26.52,
+              release/stable only (not preview). Read the
+              <a
+                href="https://faizul726.github.io/blog/how-to-use-renderdragon-shaders/"
+                target="_blank"
+                ><strong>installation guide</strong></a
+              >
+              before you start.
+            </p>
+
+            <ul class="notes" aria-label="Before you start">
+              <li>
+                If you combine Mirai with other packs, place it on top of them.
+              </li>
+              <li>
+                Mirai already supports colored lighting (flood/static light);
+                simply combine it with the Vibrant Visual pack, which already
+                includes a configuration for colored lighting.
+              </li>
+            </ul>
+
+            <div class="os" id="android">
+              <h3>Android</h3>
+              <div class="actions">
                 <a
-                  href="https://github.com/bambosan/mirai"
-                  target="_blank"
-                  class="btn-secondary"
+                  class="btn btn-primary"
+                  href="https://github.com/bambosan/mirai/releases/download/3.0.0/mirai-android-3.0.0.mcpack"
+                  >Download</a
                 >
-                  <i class="fab fa-github"></i> View Repository
-                </a>
               </div>
-              <div class="oss-img-wrapper">
-                <img src="open-source.png" alt="Mirai GitHub Repository" />
+            </div>
+
+            <div class="os" id="windows">
+              <h3>Windows</h3>
+              <div class="actions">
+                <a
+                  class="btn btn-primary"
+                  href="https://github.com/bambosan/mirai/releases/download/3.0.0/mirai-windows-3.0.0.mcpack"
+                  >Download</a
+                >
+              </div>
+            </div>
+
+            <div class="os" id="ios">
+              <h3>iOS</h3>
+              <div class="actions">
+                <a
+                  class="btn btn-primary"
+                  href="https://github.com/bambosan/mirai/releases/download/3.0.0/mirai-ios-3.0.0.mcpack"
+                  >Download</a
+                >
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="view-download" class="view">
-        <div class="container reveal">
-          <h2 class="section-title">Download & Install</h2>
-          <p style="margin-top: 1rem; margin-bottom: 2rem">
-            <b>Version 2.1.1</b><br>for <span style="color: var(--text-main)"><b>MCBE: 26.10, 26.11, 26.12, 26.13 release/stable (not preview!)</b></span><br>also please read the installation guide!
-          </p>
-
-          <div class="os-tabs">
-            <button class="os-tab-btn active" data-os="android"><i class="fab fa-android" style="color: var(--accent)"></i> Android</button>
-            <button class="os-tab-btn" data-os="windows"><i class="fab fa-windows" style="color: var(--accent)"></i> Windows</button>
-            <button class="os-tab-btn" data-os="ios"><i class="fab fa-apple" style="color: var(--accent)"></i> iOS</button>
-          </div>
-
-          <div id="os-android" class="os-content active">
-            <div class="download-options">
-              <a
-                href="https://github.com/bambosan/mirai/releases/download/2.1.1/mirai-android-2.1.1.mcpack"
-                onclick="odp(this)"
-                class="btn-primary"
-              >
-                Support Me (Wait 10s)
-              </a>
-              <a
-                href="https://github.com/bambosan/mirai/releases/download/2.1.1/mirai-android-2.1.1.mcpack"
-                class="btn-secondary"
-              >
-                Direct Download
-              </a>
-            </div>
-
-            <div class="guide-box reveal">
-              <h3 style="color: var(--text-main); margin-bottom: 1rem">Installation Guide</h3>
-              <p style="margin-bottom: 1.5rem">There are three ways to install it and no recommendation on which is the best; choose the one you like.</p>
-
-              <p style="margin-bottom: 1rem">
-                <strong>Using MB Loader app</strong>
-              </p>
-              <ol>
+      <section class="section" id="changelog">
+        <div class="wrap split">
+          <h2>Changelog</h2>
+          <div class="prose log">
+            <article>
+              <h3>3.0.0 <span class="tag">Latest</span></h3>
+              <br />
+              <ul>
+                <li>Support MCBE 26.50 and above</li>
+                <li>Support for iOS</li>
+                <li>Added simple filtering to screen space reflections</li>
+                <li>Added parallax effect to water waves</li>
+                <li>Added rain puddles on upward-facing surfaces</li>
+                <li>Added rain contribution to sky and atmosphere</li>
+                <li>Added simple distance/boder fog</li>
+                <li>Added new materials</li>
+              </ul>
+              <h4>Changed</h4>
+              <ul>
                 <li>
-                  Download the app
-                  <a
-                    href="https://play.google.com/store/apps/details?id=io.github.bambosan.mbloader"
-                    target="_blank"
-                    style="color: var(--accent); text-decoration: underline"
-                    >here</a
-                  >
+                  Codebase rebuilt for the new compiler, with a new shader and
+                  file structure
                 </li>
-                <li>Open the app, go to <strong>Settings</strong></li>
-                <li>Click <strong>Import addon</strong>, select the downloaded .mcpack file</li>
-                <li>Back to <strong>Home</strong> and click <strong>Load with Draco</strong></li>
-                <li>Activate the resource pack</li>
-                <li>Restart MB Loader</li>
-              </ol>
-
-              <p style="margin-top: 2rem; margin-bottom: 1rem">
-                <strong>Using Levi Launcher app</strong>
-              </p>
-              <ol>
+                <li>Improve cirrus cloud shape</li>
+                <li>Improve tonemapping</li>
                 <li>
-                  Download the app
-                  <a
-                    href="https://github.com/LiteLDev/LeviLaunchroid/releases/latest"
-                    target="_blank"
-                    style="color: var(--accent); text-decoration: underline"
-                    >here</a
-                  >
+                  Simplify exposure, now always driven by the scene’s average
+                  brightness
+                </li>
+                <li>Reduce water scattering brightness</li>
+                <li>Rework atmospheric scattering</li>
+                <li>Simplify volumetric fog and air scattering</li>
+                <li>Simplify sky probe shading</li>
+                <li>Rework shadow filtering</li>
+              </ul>
+              <h4>Removed</h4>
+              <ul>
+                <li>
+                  Remove volumetric clouds, including it's shadows, because the
+                  buffer that stored their noise textures is no longer
+                  accessible to one of the materials (cirrus clouds remain)
+                </li>
+                <li>Remove the old deferred multipass and tiled materials</li>
+                <li>
+                  Remove distant transition fading to subsurface scattering
+                  material, now at a distance of about 50 blocks from the
+                  player's position, all blocks that have subsurface scattering
+                  will looks ugly
                 </li>
                 <li>
-                  Download the mod
-                  <a
-                    href="https://github.com/mcbegamerxx954/mtbinloader2/releases/latest"
-                    target="_blank"
-                    style="color: var(--accent); text-decoration: underline"
-                    >here</a> (.so file)
+                  Remove screen space reflection to the water surface when the
+                  camera is in the water
+                </li>
+              </ul>
+              <h4>Known Bug</h4>
+              <ul>
+                <li>
+                  Some objects rendered as “Actors” appear completely black
+                  (does not occur on Android devices with Mali GPUs)
                 </li>
                 <li>
-                  Open Levi Launcher, go to <strong>Manage Mods</strong>, click <strong>Add Mod</strong> and select the mod (.so file) from step 2
+                  Severe color banding on volumetric fog (Mojang moved the
+                  temporal accumulation for froxels but didn’t apply it to the
+                  stage where scattering and color are calculated)
                 </li>
+              </ul>
+              <h4>Limitation</h4>
+              <ul>
                 <li>
-                  Go to <strong>Content Management</strong>, click <strong>Resource Packs</strong>, click <strong>Import Resource Pack</strong> select the downloaded .mcpack file
+                  Objects that use forward rendering (e.g. glass, ice and
+                  banners) look distracting when viewed from underwater. This is
+                  inherent to deferred rendering, not a bug
                 </li>
-                <li>Click <strong>Launch</strong></li>
-                <li>Activate the resource pack</li>
-                <li>Restart Levi Launcher</li>
-              </ol>
+              </ul>
+            </article>
 
-              <p style="margin-top: 2rem; margin-bottom: 1rem">
-                <strong>Using Ambient app</strong>
-              </p>
-              <ol>
-                <li>
-                  Download the app
-                  <a
-                    href="https://ambient.kitsuri.dev/"
-                    target="_blank"
-                    style="color: var(--accent); text-decoration: underline"
-                    >here</a
-                  >
-                </li>
-                <li>Open <strong>file manager</strong>, click the downloaded .mcpack file, <strong>open with Ambient</strong></li>
-                <li>Open the app, click <strong>Launch Game</strong></li>
-                <li>Activate the resource pack</li>
-                <li>Restart Ambient</li>
-              </ol>
+            <details class="older">
+              <summary>Older versions</summary>
 
-              <div class="warning-box">
-                <strong>IMPORTANT:</strong> If combining Mirai with other packs, place it on top of them!
-              </div>
-              <div class="warning-box">
-                <strong>IMPORTANT:</strong> Volumetric clouds are NOT active by default. Check the pack's settings.
-              </div>
-              <div class="warning-box">
-                <strong>IMPORTANT:</strong> Volumetric clouds are heavy stuff. Set Vibrant Visual resolution to 50% or below before activating!
-              </div>
-            </div>
-          </div>
+              <article>
+                <h3>2.1.1</h3>
+                <br />
+                <ul>
+                  <li>Added full support for Windows</li>
+                  <li>Added support for MCBE 26.10 and above</li>
+                  <li>
+                    Added screen space reflection to the water surface when the
+                    camera is in the water
+                  </li>
+                  <li>Added water scattering (not the volume)</li>
+                  <li>Added new materials</li>
+                  <li>
+                    Added support for colored floodfill/static lighting.
+                    Currently need another resource pack (vibrant visual pack)
+                    that has colored static light configurations
+                  </li>
+                  <li>
+                    Added transition fading to subsurface scattering material
+                    value, now at a distance of about 50 blocks from the
+                    player's position, all blocks that have subsurface
+                    scattering will use diffuse lambert
+                  </li>
+                </ul>
+                <h4>Changed</h4>
+                <ul>
+                  <li>Improve cirrus cloud shape</li>
+                  <li>Improve cirrus cloud lighting</li>
+                  <li>
+                    New cirrus cloud positioning, now the position is absolute
+                    to the world origin, no longer following the player's
+                    position
+                  </li>
+                  <li>
+                    Remove extra details on the edges of the volumetric cloud (a
+                    bit performance improvement)
+                  </li>
+                  <li>Improve volumetric clouds model</li>
+                  <li>Improve volumetric clouds lighting</li>
+                  <li>Improve volumetric clouds rendering</li>
+                  <li>Improve volumetric clouds shadow accuracy</li>
+                  <li>Reduce albedo brightness</li>
+                  <li>Increase contrast and exposure to post processing</li>
+                  <li>New underwater detection method</li>
+                  <li>
+                    Improve volumetric fog, now the fog disappears when the
+                    player is inside the cave
+                  </li>
+                  <li>Reduce subsurface scattering falloff</li>
+                  <li>Reduce water normal map offsets/bump</li>
+                  <li>Increase water surface wave distance smoothing</li>
+                  <li>Increase water caustics brightness</li>
+                  <li>Desaturate directional lighting color at night</li>
+                  <li>Reduce volumetric clouds brightness at night</li>
+                  <li>
+                    Some changes to atmospheric scattering, now it is warmer in
+                    the morning or afternoon and also more vibrant at dusk
+                  </li>
+                  <li>
+                    Remove celestial bodies on probe reflections because they
+                    all look ugly
+                  </li>
+                  <li>Improve nether and endworld ambient lighting</li>
+                  <li>New block lightmap lighting</li>
+                  <li>Improve undewater volumetric fog placement</li>
+                  <li>Increase sun brightness</li>
+                </ul>
+                <h4>Fixes</h4>
+                <ul>
+                  <li>
+                    Fixes broken noise textures (affected to volumetric and
+                    planar clouds shape)
+                  </li>
+                  <li>
+                    Fixes volumetric clouds dithering (because of broken noise
+                    textures)
+                  </li>
+                  <li>Fixes billboard rendering</li>
+                  <li>Fixes underwater rendering</li>
+                  <li>Fixes wrong tonemapping implementatione</li>
+                </ul>
+              </article>
 
-          <div id="os-windows" class="os-content">
-            <div class="download-options">
-              <a
-                href="https://github.com/bambosan/mirai/releases/download/2.1.1/mirai-windows-2.1.1.mcpack"
-                onclick="odp(this)"
-                class="btn-primary"
-              >
-                Support Me (Wait 10s)
-              </a>
-              <a
-                href="https://github.com/bambosan/mirai/releases/download/2.1.1/mirai-windows-2.1.1.mcpack"
-                class="btn-secondary"
-              >
-                Direct Download
-              </a>
-            </div>
+              <article>
+                <h3>2.0.0</h3>
+                <br />
+                <ul>
+                  <li>
+                    Added Real-time, permeable volumetric clouds with shadows
+                  </li>
+                  <li>Added Volumetric fog underwater</li>
+                  <li>Added Lighting fades at sunset, night and sunrise</li>
+                </ul>
+                <h4>Changed</h4>
+                <ul>
+                  <li>New 2D clouds, water waves and water caustics</li>
+                  <li>
+                    New lighting system: baked AO is separate from albedo and
+                    contributes to ambient lighting
+                  </li>
+                  <li>
+                    New celestial bodies: the sun is drawn in shader code, the
+                    moon uses Minecraft's texture
+                  </li>
+                  <li>
+                    New screen-space reflections: sharper, more vertical
+                    tracing, no screen edge fading
+                  </li>
+                  <li>
+                    Brighter, less saturated shadows, and lower color saturation
+                    in post-processing
+                  </li>
+                  <li>
+                    Less mie scattering in volumetric fog, with more intensity
+                    at sunrise
+                  </li>
+                  <li>Shadow blur is now the same at all quality settings</li>
+                </ul>
+              </article>
 
-            <div class="guide-box">
-              <h3 style="color: var(--text-main); margin-bottom: 1rem">Installation Guide</h3>
+              <article>
+                <h3>1.1.1</h3>
+                <h4>Fixed</h4>
+                <ul>
+                  <li>
+                    Black rectangle when looking at objects that produce bloom
+                  </li>
+                  <li>Invisible map</li>
+                  <li>Chaotic beam effects when defeating the Ender Dragon</li>
+                  <li>Raindrop particles passing through blocks</li>
+                  <li>Bright water in the End</li>
+                  <li>Flashbang effect when joining a world</li>
+                  <li>Volumetric fog not rendering properly on some objects</li>
+                </ul>
+                <h4>Changed</h4>
+                <ul>
+                  <li>
+                    Reduced subsurface scattering falloff and water wave
+                    frequency
+                  </li>
+                  <li>Increased emissive intensity of texture material</li>
+                </ul>
+              </article>
 
-              <p style="margin-bottom: 1.5rem">There are several ways to install it. Once you have the .mcpack file, you can extract it and do whatever you want to install it, as long as it works and you know what you're doing. We'll show you the method using BRD (BetterRenderDragon) because it's considered the easiest.</p>
-
-              <ol>
-                <li>
-                  Install BRD using
-                  <a
-                    href="https://github.com/faizul726/brd-manager-script"
-                    target="_blank"
-                    style="color: var(--accent); text-decoration: underline"
-                    >this script</a
-                  >
-                </li>
-                <li>Open <strong>File Explorer</strong> and <strong>double click downloaded .mcpack file</strong> (this will open Minecraft)</li>
-                <li>When Minecraft is open, <strong>go to video settings</strong></li>
-                <li><strong>Enable</strong> "In-game graphics mode switching"</li>
-                <li><strong>Set graphics mode</strong> to "Fancy" (if not already)</li>
-                <li>Activate the resource pack</li>
-                <li>Join the world and change the graphics mode to vibrant visual</li>
-              </ol>
-
-              <div class="warning-box">
-                <strong>IMPORTANT:</strong> If combining Mirai with other packs, place it on top of them!
-              </div>
-              <div class="warning-box">
-                <strong>IMPORTANT:</strong> Volumetric clouds are NOT active by default. Check the pack's settings.
-              </div>
-              <div class="warning-box">
-                <strong>IMPORTANT:</strong> Volumetric clouds are heavy stuff. Set Vibrant Visual resolution to 50% or below before activating!
-              </div>
-            </div>
-          </div>
-
-          <div id="os-ios" class="os-content">
-            <div class="download-options">
-              <button class="btn-primary" disabled>Support Me (WIP)</button>
-              <button class="btn-secondary" disabled>Direct Download (WIP)</button>
-            </div>
-            <div class="guide-box">
-              <h3 style="color: var(--text-main); margin-bottom: 1rem">Installation Guide</h3>
-              <p>
-                <em>Work in progress...</em>
-              </p>
-            </div>
+              <article>
+                <h3>1.0.0</h3>
+                <p>Initial release.</p>
+              </article>
+            </details>
           </div>
         </div>
       </section>
 
-      <section id="view-changelog" class="view container-alt">
-        <div class="container reveal">
-          <h2 class="section-title">Changelog</h2>
-          <div class="list-section">
-            <h2 style="margin-bottom: 2rem; color: var(--text-main)">Version 2.1.1 (Latest)</h2>
-            <ul>
-              <li>Added full support for Windows MCBE</li>
-              <li>Added support for MCBE 26.10 and above</li>
-              <li>Added screen space reflection to the water surface when the camera is in the water</li>
-              <li>Added water scattering (not the volume)</li>
-              <li>Added new materials</li>
-              <li>Added support for colored floodfill/static lighting. Currently need another resource pack (vibrant visual pack) that has colored static light configurations</li>
-              <li>Added transition fading to subsurface scattering material value, now at a distance of about 50 blocks from the player's position, all blocks that have subsurface scattering will use diffuse lambert</li>
-            </ul>
-            <h3 style="margin-top: 1.5rem">Changes</h3>
-            <ul>
-              <li>Improve cirrus cloud shape</li>
-              <li>Improve cirrus cloud lighting</li>
-              <li>New cirrus cloud positioning, now the position is absolute to the world origin, no longer following the player's position</li>
-              <li>Remove extra details on the edges of the volumetric cloud (a bit performance improvement)</li>
-              <li>Improve volumetric clouds model</li>
-              <li>Improve volumetric clouds lighting</li>
-              <li>Improve volumetric clouds rendering</li>
-              <li>Improve volumetric clouds shadow accuracy</li>
-              <li>Reduce albedo brightness</li>
-              <li>Increase contrast and exposure to post processing</li>
-              <li>New underwater detection method</li>
-              <li>Improve volumetric fog, now the fog disappears when the player is inside the cave</li>
-              <li>Reduce subsurface scattering falloff</li>
-              <li>Reduce water normal map offsets/bump</li>
-              <li>Increase water surface wave distance smoothing</li>
-              <li>Increase water caustics brightness</li>
-              <li>Desaturate directional lighting color at night</li>
-              <li>Reduce volumetric clouds brightness at night</li>
-              <li>Some changes to atmospheric scattering, now it is warmer in the morning or afternoon and also more vibrant at dusk</li>
-              <li>Remove celestial bodies on probe reflections because they all look ugly</li>
-              <li>Improve nether and endworld ambient lighting</li>
-              <li>New block lightmap lighting</li>
-              <li>Improve undewater volumetric fog placement</li>
-              <li>Increase sun brightness</li>
-            </ul>
-            <h3 style="margin-top: 1.5rem">Fix</h3>
-            <ul>
-              <li>Fixes broken noise textures (affected to volumetric and planar clouds shape)</li>
-              <li>Fixes volumetric clouds dithering (because of broken noise textures)</li>
-              <li>Fixes billboard rendering</li>
-              <li>Fixes underwater rendering</li>
-              <li>Fixes wrong tonemapping implementatione</li>
-            </ul>
-            <h3 style="margin-top: 1.5rem">Known Bug</h3>
-            <ul>
-              <li>All objects that forward rendered (e.g. glass and banner) look distracting when viewed from underwater</li>
-            </ul>
-          </div>
-          <div class="list-section">
-            <h2 style="margin-bottom: 2rem; color: var(--text-main)">Version 2.0.0</h2>
-            <ul>
-              <li>Added real-time, permeable volumetric clouds</li>
-              <li>Added volumetric clouds shadow</li>
-              <li>Added volumetric fog in under water</li>
-              <li>Added transition fading to lighting when sunset to night or night to sunrise</li>
-            </ul>
-            <h3 style="margin-top: 1.5rem">Changes</h3>
-            <ul>
-              <li>New 2d clouds model</li>
-              <li>New water surface wave model</li>
-              <li>New water caustic model</li>
-              <li>New lighting system, now baked AO is separated from albedo and it's contribute to ambient lighting</li>
-              <li>New celestial bodies model, now the sun is drawing from shader code and moon from Minecraft's texture</li>
-              <li>New screen space reflection, now it's not blurry, has more vertical tracing, and remove screen edge fading</li>
-              <li>Increase shadow brighness also reduce it's saturation</li>
-              <li>Reduce color saturation at post processing</li>
-              <li>Reduce mie scattering of volumetric fog</li>
-              <li>Change aerial/atmospheric intensity of volumetric fog. Now it has normal intensity at day, noon, sunset, and night, but has more intensity at sunrise</li>
-              <li>Reduce shadow blur filter wide, now it's same for all quality settings</li>
-            </ul>
-          </div>
-          <div class="list-section">
-            <h2 style="margin-bottom: 2rem; color: var(--text-main)">Version 1.1.1</h2>
-            <h3>Bugs Fixed</h3>
-            <ul>
-              <li>Black rectangle when looking at an object that produces bloom</li>
-              <li>Invisible map</li>
-              <li>Chaotic beam effects that occur when defeating Ender Dragon</li>
-              <li>Raindrop particles pass through the block</li>
-              <li>Water becomes bright when in the endworld</li>
-              <li>Player get flashbanged when joined world</li>
-              <li>Volumetric fog not rendered properly on some objects</li>
-            </ul>
-            <h3 style="margin-top: 1.5rem">Changes</h3>
-            <ul>
-              <li>Reduce subsurface scattering falloff</li>
-              <li>Reduce the frequency of water waves</li>
-              <li>Increase the emissive intensity of texture material</li>
-            </ul>
-          </div>
-          <div class="list-section">
-            <h2 style="margin-bottom: 2rem; color: var(--text-main)">Version 1.0.0</h2>
-            <p>Initial release</p>
-          </div>
+      <section class="section" id="faq">
+        <div class="wrap split">
+          <h2>FAQ</h2>
+          <dl class="faq">
+            <div>
+              <dt>Is Mirai performance friendly?</dt>
+              <dd>
+                Can't really say, but its performance is better than the vanilla
+                Vibrant Visual.
+              </dd>
+            </div>
+            <div>
+              <dt>
+                Is it compatible with other resource packs, including VV packs?
+              </dt>
+              <dd>Yes. Put Mirai above all of them.</dd>
+            </div>
+            <div>
+              <dt>Does rain affect the visuals?</dt>
+              <dd>Yes.</dd>
+            </div>
+            <div>
+              <dt>Can I use it on servers?</dt>
+              <dd>Yes.</dd>
+            </div>
+          </dl>
         </div>
       </section>
 
-      <section id="view-faq" class="view">
-        <div class="container reveal">
-          <h2 class="section-title">FAQ</h2>
-          <div style="margin-top: 2rem">
-            <div class="faq-item">
-              <strong>Rain doesn't affect the visuals?</strong>
-              <p><b>Rain contribution to lighting and atmosphere is not yet implemented.</b> This feature is planned for future updates</p>
-            </div>
-            <div class="faq-item">
-              <strong>Is Mirai performance friendly?</strong>
-              <p>Without volumetric clouds the answer is <b>yes</b>, if volumetric cloud is enabled then the answer is <b>no</b>. It targets mid to high-end devices</p>
-            </div>
-            <div class="faq-item">
-              <strong>Is this compatible with other resource packs (especially VV packs)?</strong>
-              <p>Yes, you just have to <b>put Mirai above all of them</b></p>
-            </div>
-            <div class="faq-item">
-              <strong>Can I use this on servers?</strong>
-              <p>Yes</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="view-gallery" class="view container-alt">
-        <div class="container">
-          <h2 class="section-title reveal">Gallery</h2>
-          <p class="gallery-hint reveal">Click on the image to enlarge</p>
-          <div class="screenshots reveal">Currently there are no images to display</div>
-        </div>
-      </section>
-
-      <section id="view-contact" class="view container-alt">
-        <div class="container reveal">
-          <h2 class="section-title">Contact</h2>
-          <div style="margin-top: 1rem">
-            <p style="font-size: 1.1rem">
-              Found a bug? Have a suggestion? Let me know via
+      <section class="section" id="contact">
+        <div class="wrap split">
+          <h2>Contact</h2>
+          <div class="prose">
+            <p>
+              Found a bug or have a suggestion? Tell me on
               <a
                 href="https://github.com/bambosan/mirai"
-                style="
-                  color: var(--accent);
-                  text-decoration: underline;
-                  font-weight: 600;
-                "
+                target="_blank"
+                rel="noopener"
                 >GitHub</a
-              >
-              or
-              <a
-                href="mailto:bambosan888@gmail.com"
-                style="
-                  color: var(--accent);
-                  text-decoration: underline;
-                  font-weight: 600;
-                "
-                >email</a
               >.
             </p>
           </div>
@@ -508,36 +530,39 @@
       </section>
     </main>
 
-    <div class="footer-note">
-      <p style="margin-bottom: 1.5rem; font-size: 1rem">
-        &copy; bambosan 2026 ~
-      </p>
-      <p>
-        RenderDragon Materials is assets of Minecraft: Bedrock Edition and Minecraft is trademark of Mojang. This site is not affiliated with Mojang or Microsoft.<br> Thanks to
-        <a
-          href="https://github.com/veka0"
-          target="_blank"
-          style="color: var(--accent); text-decoration: underline"
-          >veka0</a
-        > for making such a
-        <a
-          href="https://veka0.github.io/lazurite/"
-          target="_blank"
-          style="color: var(--accent); text-decoration: underline"
-          >great tool</a
-        >and to everyone who has helped me.
-      </p>
-    </div>
-
-    <div id="image-modal" class="modal hidden" onclick="closeModal()">
-      <span class="modal-close" onclick="closeModal()">&times;</span>
+    <footer class="site-footer">
       <img
-        id="modal-image"
-        src=""
-        alt="Fullscreen View"
-        onclick="event.stopPropagation()"
+        class="footer-img"
+        src="ss4.png"
+        width="1600"
+        height="720"
+        loading="lazy"
+        alt="Dappled forest at noon"
       />
-    </div>
-    <script src="./script.js" defer></script>
+      <div class="wrap split">
+        <p class="copy">&copy; bambosan 2026</p>
+        <div class="prose small">
+          <p>
+            RenderDragon Materials are assets of Minecraft: Bedrock Edition, and
+            Minecraft is a trademark of Mojang. This site is not affiliated with
+            Mojang or Microsoft.
+          </p>
+          <p>
+            Thanks to
+            <a href="https://github.com/veka0" target="_blank" rel="noopener"
+              >veka0</a
+            >
+            for making such a
+            <a
+              href="https://veka0.github.io/lazurite/"
+              target="_blank"
+              rel="noopener"
+              >great tool</a
+            >
+            and to everyone who has helped me.
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
