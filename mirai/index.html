@@ -55,9 +55,9 @@
       <section class="hero" id="top">
         <img
           class="hero-img"
-          src="ss0.png"
-          width="1600"
-          height="720"
+          src="ss0.jpg"
+          width="2400"
+          height="1080"
           alt="A cherry grove with a small village house, rendered with Mirai"
           fetchpriority="high"
         />
@@ -133,9 +133,9 @@
           />
           <img
             class="c-c"
-            src="ss3.png"
-            width="1600"
-            height="720"
+            src="ss3.jpg"
+            width="2400"
+            height="1080"
             loading="lazy"
             alt="Autumn trees in gold and red against a blue sky"
           />
@@ -276,6 +276,22 @@
                 <li>Fixed NaN on Actor materials</li>
                 <li>Fixed terrain shadow rendering</li>
                 <li>Fixed TAAU offsets</li>
+              </ul>
+              <h4>Known Bug</h4>
+              <ul>
+                <li>
+                  Severe color banding on volumetric fog (Mojang moved the
+                  temporal accumulation for froxels but didn’t apply it to the
+                  stage where scattering and color are calculated)
+                </li>
+              </ul>
+              <h4>Limitation</h4>
+              <ul>
+                <li>
+                  Objects that use forward rendering (e.g. glass, ice and
+                  banners) look distracting when viewed from underwater. This is
+                  inherent to deferred rendering, not a bug
+                </li>
               </ul>
             </article>
 

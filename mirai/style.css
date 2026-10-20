@@ -576,7 +576,7 @@ li + li {
 /* Mobile */
 @media (max-width: 52rem) {
   .hero {
-    height: 70svh;
+    height: 50svh;
     min-height: 26rem;
   }
 
