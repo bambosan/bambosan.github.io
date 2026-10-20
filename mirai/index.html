@@ -82,7 +82,7 @@
               >View on GitHub</a
             >
           </div>
-          <p class="meta">Version 3.0.0 for MCBE 26.50 to 26.52</p>
+          <p class="meta">Version 3.1.0 for MCBE 26.50 to 26.52</p>
         </div>
       </section>
 
@@ -194,7 +194,7 @@
           <h2>Download</h2>
           <div class="prose">
             <p>
-              <strong>Version 3.0.0</strong> for MCBE: 26.50, 26.51, and 26.52,
+              <strong>Version 3.1.0</strong> for MCBE: 26.50, 26.51, and 26.52,
               release/stable only (not preview). Read the
               <a
                 href="https://faizul726.github.io/blog/how-to-use-renderdragon-shaders/"
@@ -220,7 +220,7 @@
               <div class="actions">
                 <a
                   class="btn btn-primary"
-                  href="https://github.com/bambosan/mirai/releases/download/3.0.0/mirai-android-3.0.0.mcpack"
+                  href="https://github.com/bambosan/mirai/releases/download/3.1.0/mirai-android-3.1.0.mcpack"
                   >Download</a
                 >
               </div>
@@ -231,7 +231,7 @@
               <div class="actions">
                 <a
                   class="btn btn-primary"
-                  href="https://github.com/bambosan/mirai/releases/download/3.0.0/mirai-windows-3.0.0.mcpack"
+                  href="https://github.com/bambosan/mirai/releases/download/3.1.0/mirai-windows-3.1.0.mcpack"
                   >Download</a
                 >
               </div>
@@ -242,7 +242,7 @@
               <div class="actions">
                 <a
                   class="btn btn-primary"
-                  href="https://github.com/bambosan/mirai/releases/download/3.0.0/mirai-ios-3.0.0.mcpack"
+                  href="https://github.com/bambosan/mirai/releases/download/3.1.0/mirai-ios-3.1.0.mcpack"
                   >Download</a
                 >
               </div>
@@ -256,79 +256,103 @@
           <h2>Changelog</h2>
           <div class="prose log">
             <article>
-              <h3>3.0.0 <span class="tag">Latest</span></h3>
+              <h3>3.1.0 <span class="tag">Latest</span></h3>
               <br />
               <ul>
-                <li>Support MCBE 26.50 and above</li>
-                <li>Support for iOS</li>
-                <li>Added simple filtering to screen space reflections</li>
-                <li>Added parallax effect to water waves</li>
-                <li>Added rain puddles on upward-facing surfaces</li>
-                <li>Added rain contribution to sky and atmosphere</li>
-                <li>Added simple distance/boder fog</li>
-                <li>Added new materials</li>
+                <li>Added distance fading to subsurface materials</li>
+                <li>New sky lightmap occlusion curve</li>
+                <li>New block lightmap curve and changed its intensity</li>
+                <li>Update the tonemapping; it now uses Rec. 709 directly and has no unnecessary color transform</li>
+                <li>Decrease puddle size, increase the threshold, and increase the intensity</li>
+                <li>Changed the sky atmosphere ground</li>
+                <li>Increase border fog intensity</li>
+                <li>Decrease night light intensity</li>
+                <li>Decrease volumetric fog transmittance</li>
+                <li>Simplify water surface wave normal caculations</li>
+                <li>Remove the ozone multiplier on transmittance calculations for surface lighting</li>
               </ul>
-              <h4>Changed</h4>
+              <h4>Fixed</h4>
               <ul>
-                <li>
-                  Codebase rebuilt for the new compiler, with a new shader and
-                  file structure
-                </li>
-                <li>Improve cirrus cloud shape</li>
-                <li>Improve tonemapping</li>
-                <li>
-                  Simplify exposure, now always driven by the scene’s average
-                  brightness
-                </li>
-                <li>Reduce water scattering brightness</li>
-                <li>Rework atmospheric scattering</li>
-                <li>Simplify volumetric fog and air scattering</li>
-                <li>Simplify sky probe shading</li>
-                <li>Rework shadow filtering</li>
-              </ul>
-              <h4>Removed</h4>
-              <ul>
-                <li>
-                  Remove volumetric clouds, including it's shadows, because the
-                  buffer that stored their noise textures is no longer
-                  accessible to one of the materials (cirrus clouds remain)
-                </li>
-                <li>Remove the old deferred multipass and tiled materials</li>
-                <li>
-                  Remove distant transition fading to subsurface scattering
-                  material, now at a distance of about 50 blocks from the
-                  player's position, all blocks that have subsurface scattering
-                  will looks ugly
-                </li>
-                <li>
-                  Remove screen space reflection to the water surface when the
-                  camera is in the water
-                </li>
-              </ul>
-              <h4>Known Bug</h4>
-              <ul>
-                <li>
-                  Some objects rendered as “Actors” appear completely black
-                  (does not occur on Android devices with Mali GPUs)
-                </li>
-                <li>
-                  Severe color banding on volumetric fog (Mojang moved the
-                  temporal accumulation for froxels but didn’t apply it to the
-                  stage where scattering and color are calculated)
-                </li>
-              </ul>
-              <h4>Limitation</h4>
-              <ul>
-                <li>
-                  Objects that use forward rendering (e.g. glass, ice and
-                  banners) look distracting when viewed from underwater. This is
-                  inherent to deferred rendering, not a bug
-                </li>
+                <li>Fixed NaN on Actor materials</li>
+                <li>Fixed terrain shadow rendering</li>
+                <li>Fixed TAAU offsets</li>
               </ul>
             </article>
 
             <details class="older">
               <summary>Older versions</summary>
+
+              <article>
+                <h3>3.0.0</h3>
+                <br />
+                <ul>
+                  <li>Support MCBE 26.50 and above</li>
+                  <li>Support for iOS</li>
+                  <li>Added simple filtering to screen space reflections</li>
+                  <li>Added parallax effect to water waves</li>
+                  <li>Added rain puddles on upward-facing surfaces</li>
+                  <li>Added rain contribution to sky and atmosphere</li>
+                  <li>Added simple distance/boder fog</li>
+                  <li>Added new materials</li>
+                </ul>
+                <h4>Changed</h4>
+                <ul>
+                  <li>
+                    Codebase rebuilt for the new compiler, with a new shader and
+                    file structure
+                  </li>
+                  <li>Improve cirrus cloud shape</li>
+                  <li>Improve tonemapping</li>
+                  <li>
+                    Simplify exposure, now always driven by the scene’s average
+                    brightness
+                  </li>
+                  <li>Reduce water scattering brightness</li>
+                  <li>Rework atmospheric scattering</li>
+                  <li>Simplify volumetric fog and air scattering</li>
+                  <li>Simplify sky probe shading</li>
+                  <li>Rework shadow filtering</li>
+                </ul>
+                <h4>Removed</h4>
+                <ul>
+                  <li>
+                    Remove volumetric clouds, including it's shadows, because the
+                    buffer that stored their noise textures is no longer
+                    accessible to one of the materials (cirrus clouds remain)
+                  </li>
+                  <li>Remove the old deferred multipass and tiled materials</li>
+                  <li>
+                    Remove distant transition fading to subsurface scattering
+                    material, now at a distance of about 50 blocks from the
+                    player's position, all blocks that have subsurface scattering
+                    will looks ugly
+                  </li>
+                  <li>
+                    Remove screen space reflection to the water surface when the
+                    camera is in the water
+                  </li>
+                </ul>
+                <h4>Known Bug</h4>
+                <ul>
+                  <li>
+                    Some objects rendered as “Actors” appear completely black
+                    (does not occur on Android devices with Mali GPUs)
+                  </li>
+                  <li>
+                    Severe color banding on volumetric fog (Mojang moved the
+                    temporal accumulation for froxels but didn’t apply it to the
+                    stage where scattering and color are calculated)
+                  </li>
+                </ul>
+                <h4>Limitation</h4>
+                <ul>
+                  <li>
+                    Objects that use forward rendering (e.g. glass, ice and
+                    banners) look distracting when viewed from underwater. This is
+                    inherent to deferred rendering, not a bug
+                  </li>
+                </ul>
+              </article>
 
               <article>
                 <h3>2.1.1</h3>
