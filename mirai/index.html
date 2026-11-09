@@ -82,7 +82,7 @@
               >View on GitHub</a
             >
           </div>
-          <p class="meta">Version 3.1.0 for MCBE 26.50 to 26.52</p>
+          <p class="meta">Version 4.0.0 for MCBE 26.60 to 26.62</p>
         </div>
       </section>
 
@@ -157,7 +157,15 @@
               <dd>A semi-physical sky for natural look.</dd>
             </div>
             <div>
-              <dt>Better Water caustics</dt>
+              <dt>Volumetric clouds</dt>
+              <dd>Realtime permeable volumetric cumulus style clouds.</dd>
+            </div>
+            <div>
+              <dt>Rain ripples</dt>
+              <dd>Circular waves that form on the surface of water when raindrops landed.</dd>
+            </div>
+            <div>
+              <dt>Better water caustics</dt>
               <dd>Light patterns projected onto the seabed.</dd>
             </div>
             <div>
@@ -194,8 +202,7 @@
           <h2>Download</h2>
           <div class="prose">
             <p>
-              <strong>Version 3.1.0</strong> for MCBE: 26.50, 26.51, and 26.52,
-              release/stable only (not preview). Read the
+              <strong>Version 4.0.0</strong> for MCBE: 26.60 and 26.62, release/stable only (not preview). Read the
               <a
                 href="https://faizul726.github.io/blog/how-to-use-renderdragon-shaders/"
                 target="_blank"
@@ -209,6 +216,12 @@
                 If you combine Mirai with other packs, place it on top of them.
               </li>
               <li>
+                Volumetric clouds are NOT active by default. Check the pack's settings.
+              </li>
+              <li>
+                Volumetric clouds are heavy stuff. Set Vibrant Visual resolution to 50% or below before activating!
+              </li>
+              <li>
                 Mirai already supports colored lighting (flood/static light);
                 simply combine it with the Vibrant Visual pack, which already
                 includes a configuration for colored lighting.
@@ -220,7 +233,7 @@
               <div class="actions">
                 <a
                   class="btn btn-primary"
-                  href="https://github.com/bambosan/mirai/releases/download/3.1.0/mirai-android-3.1.0.mcpack"
+                  href="https://github.com/bambosan/mirai/releases/download/4.0.0/mirai-android-4.0.0.mcpack"
                   >Download</a
                 >
               </div>
@@ -231,7 +244,7 @@
               <div class="actions">
                 <a
                   class="btn btn-primary"
-                  href="https://github.com/bambosan/mirai/releases/download/3.1.0/mirai-windows-3.1.0.mcpack"
+                  href="https://github.com/bambosan/mirai/releases/download/4.0.0/mirai-windows-4.0.0.mcpack"
                   >Download</a
                 >
               </div>
@@ -242,7 +255,7 @@
               <div class="actions">
                 <a
                   class="btn btn-primary"
-                  href="https://github.com/bambosan/mirai/releases/download/3.1.0/mirai-ios-3.1.0.mcpack"
+                  href="https://github.com/bambosan/mirai/releases/download/4.0.0/mirai-ios-4.0.0.mcpack"
                   >Download</a
                 >
               </div>
@@ -256,35 +269,24 @@
           <h2>Changelog</h2>
           <div class="prose log">
             <article>
-              <h3>3.1.0 <span class="tag">Latest</span></h3>
+              <h3>4.0.0 <span class="tag">Latest</span></h3>
               <br />
               <ul>
-                <li>Added distance fading to subsurface materials</li>
-                <li>New sky lightmap occlusion curve</li>
+                <li>Added support for MCBE 26.60+ (breaking changes)</li>
+                <li>Added realtime permeable volumetric cumulus clouds and its shadows</li>
                 <li>New block lightmap curve and changed its intensity</li>
-                <li>
-                  Update the tonemapping; it now uses Rec. 709 directly and has
-                  no unnecessary color transform
-                </li>
-                <li>
-                  Decrease puddle size, increase the threshold, and increase the
-                  intensity
-                </li>
-                <li>Changed the sky atmosphere ground</li>
-                <li>Increase border fog intensity</li>
-                <li>Decrease night light intensity</li>
-                <li>Decrease volumetric fog transmittance</li>
-                <li>Simplify water surface wave normal caculations</li>
-                <li>
-                  Remove the ozone multiplier on transmittance calculations for
-                  surface lighting
-                </li>
+                <li>Added rain splash/ripples</li>
+                <li>Added anisotropy lighting to SSS</li>
               </ul>
-              <h4>Fixed</h4>
+              <h4>Changed</h4>
               <ul>
-                <li>Fixed NaN on Actor materials</li>
-                <li>Fixed terrain shadow rendering</li>
-                <li>Fixed TAAU offsets</li>
+                <li>New puddle map</li>
+                <li>New cirrus model</li>
+                <li>Reduced border fog intensity</li>
+                <li>Reduced sky probe reflection intensity</li>
+                <li>Reduced water waves warp/parallax step</li>
+                <li>Adjusted sky ambient lighting intensity</li>
+                <li>Remove volumetric fog at night</li>
               </ul>
               <h4>Known Bug</h4>
               <ul>
@@ -306,6 +308,55 @@
 
             <details class="older">
               <summary>Older versions</summary>
+
+              <article>
+                <h3>3.1.0</h3>
+                <br />
+                <ul>
+                  <li>Added distance fading to subsurface materials</li>
+                  <li>New sky lightmap occlusion curve</li>
+                  <li>New block lightmap curve and changed its intensity</li>
+                  <li>
+                    Update the tonemapping; it now uses Rec. 709 directly and has
+                    no unnecessary color transform
+                  </li>
+                  <li>
+                    Decrease puddle size, increase the threshold, and increase the
+                    intensity
+                  </li>
+                  <li>Changed the sky atmosphere ground</li>
+                  <li>Increase border fog intensity</li>
+                  <li>Decrease night light intensity</li>
+                  <li>Decrease volumetric fog transmittance</li>
+                  <li>Simplify water surface wave normal caculations</li>
+                  <li>
+                    Remove the ozone multiplier on transmittance calculations for
+                    surface lighting
+                  </li>
+                </ul>
+                <h4>Fixed</h4>
+                <ul>
+                  <li>Fixed NaN on Actor materials</li>
+                  <li>Fixed terrain shadow rendering</li>
+                  <li>Fixed TAAU offsets</li>
+                </ul>
+                <h4>Known Bug</h4>
+                <ul>
+                  <li>
+                    Severe color banding on volumetric fog (Mojang moved the
+                    temporal accumulation for froxels but didn’t apply it to the
+                    stage where scattering and color are calculated)
+                  </li>
+                </ul>
+                <h4>Limitation</h4>
+                <ul>
+                  <li>
+                    Objects that use forward rendering (e.g. glass, ice and
+                    banners) look distracting when viewed from underwater. This is
+                    inherent to deferred rendering, not a bug
+                  </li>
+                </ul>
+              </article>
 
               <article>
                 <h3>3.0.0</h3>
